@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bac Pro - Portfolio de Yohan DO CAO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+        }
+
+        header {
+            background-color: #0d6efd;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        nav a:hover {
+            color: #FFFFFF;
+        }
+
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+
+        .dropbtn {
+            background-color: #333;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #0d6efd;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .bubble-title {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #0d6efd;
+            margin: 40px 0 30px;
+            text-align: center;
+        }
+
+        .accordion {
+            background-color: white;
+            color: #333;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            position: relative;
+        }
+
+        .accordion::after {
+            content: '\25BA';
+            color: #0d6efd;
+            font-weight: bold;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: transform 0.3s;
+        }
+
+        .accordion.active::after {
+            transform: translateY(-50%) rotate(90deg);
+        }
+
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            border-radius: 0 0 10px 10px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .panel p {
+            padding: 15px 0;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .accordion small {
+            display: block;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 30px;
+            text-align: center;
+            font-style: italic;
+            font-size: 0.95rem;
+            cursor: pointer;
+            color: #0d6efd;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Portfolio de Yohan DO CAO</h1>
+</header>
+
+<nav>
+    <a href="presentation.html">Présentation</a>
+    <div class="dropdown">
+        <button class="dropbtn">Épreuve E5</button>
+        <div class="dropdown-content">
+            <a href="tableauSynthese.html">Tableau de synthèse</a>
+            <a href="missionFormation.html">Missions réalisées en formation</a>
+            <a href="missionEntreprise.html">Missions réalisées en entreprise</a>
+            <a href="certifications.html">Certifications</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Épreuve E6</button>
+        <div class="dropdown-content">
+            <a href="situation.html">Situation</a>
+            <a href="production.html">Production</a>
+        </div>
+    </div>
+    <a href="veille.html">Veille</a>
+</nav>
+
+<div class="container">
+    <div class="bubble-title">Tout savoir sur le Bac Pro</div>
+
+    <button class="accordion">Qu'est-ce que le Bac Pro ?<small>Un diplôme professionnalisant après la 3e</small></button>
+    <div class="panel">
+        <p>Le Bac Professionnel (ou Bac Pro) est un diplôme national qui se prépare en trois ans après la 3e. Il combine enseignement général et formation professionnelle, et permet d’entrer directement dans la vie active ou de poursuivre des études supérieures (BTS, parfois BUT). Il comprend des périodes de stage (22 semaines environ sur les 3 ans) en entreprise.</p>
+    </div>
+
+    <button class="accordion">Les différentes options<small>Des spécialités pour chaque secteur</small></button>
+    <div class="panel">
+        <p>Il existe de nombreuses spécialités de Bac Pro, notamment :<br>
+        - Bac Pro SN (Systèmes Numériques)<br>
+        - Bac Pro MELEC (Métiers de l'Électricité et de ses Environnements Connectés)<br>
+        - Bac Pro Commerce<br>
+        - Bac Pro Gestion-Administration<br>
+        - Bac Pro Maintenance des Équipements Industriels<br>
+        Chaque option prépare à un secteur spécifique avec des compétences techniques précises.</p>
+    </div>
+
+    <button class="accordion">Que faire après un Bac Pro ?<small>Études, travail, reconversion...</small></button>
+    <div class="panel">
+        <p>Après un Bac Pro, plusieurs choix s'offrent aux diplômés :<br>
+        - Entrer dans la vie active grâce aux compétences professionnelles acquises<br>
+        - Poursuivre des études en BTS (ex : BTS SIO, BTS Électrotechnique, etc.)<br>
+        - Envisager une reconversion ou une formation complémentaire (FCIL, mention complémentaire)<br>
+        - Se spécialiser ou se préparer à des concours dans la fonction publique ou l’armée.</p>
+    </div>
+
+    <button class="accordion">Avantages du Bac Pro<small>Un tremplin vers l'emploi ou la poursuite d'études</small></button>
+    <div class="panel">
+        <p>Le Bac Pro est apprécié pour :<br>
+        - Sa forte insertion professionnelle<br>
+        - Son équilibre entre théorie et pratique<br>
+        - Les nombreux stages permettant une première expérience en entreprise<br>
+        - La possibilité de continuer ses études.</p>
+    </div>
+
+    <!-- Lien de fermeture de la page -->
+    <a class="back-link" onclick="window.close();">&larr; Retour à la présentation</a>
+</div>
+
+<script>
+    const acc = document.getElementsByClassName("accordion");
+    for (let i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            const panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

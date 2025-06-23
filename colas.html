@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Colas Digital Solutions - Mon service</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+        }
+
+        header {
+            background-color: #0d6efd;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        /* Nav menu with dropdowns */
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a, nav .dropbtn {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+        }
+
+        nav a:hover, nav .dropbtn:hover {
+            color: #ffffff;
+        }
+
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+
+        .dropbtn {
+            background-color: #333;
+            padding: 10px 15px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            z-index: 1;
+            top: 100%;
+            left: 0;
+            border-radius: 0 0 6px 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            font-size: 0.9rem;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #0d6efd;
+        }
+
+        .container {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .section-title, .subsection-title {
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #0d6efd;
+            margin-bottom: 20px;
+        }
+
+        .subsection-title {
+            font-size: 1.4rem;
+            color: #0d6efd;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        .content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #0d6efd;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 30px;
+            text-align: center;
+            font-style: italic;
+            font-size: 0.95rem;
+            cursor: pointer;
+            color: #0d6efd;
+        }
+
+        /* Organigramme style */
+        .org-chart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+            position: relative;
+        }
+
+        .org-chart .level {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        /* Boîtes de l'organigramme */
+        .box {
+            width: 150px;
+            height: 50px;
+            background-color: #0d6efd;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 10px;
+            margin: 0 20px;
+        }
+
+        /* Lignes reliant les boîtes */
+        .line {
+            width: 2px;
+            height: 40px;
+            background-color: #0d6efd;
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        /* Ligne horizontale pour relier les boîtes du même niveau */
+        .horizontal-line {
+            height: 2px;
+            background-color: #0d6efd;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 100%;
+        }
+
+        /* Flèche pointant vers le bas */
+        .arrow {
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 12px solid #0d6efd;
+            margin: 10px auto;
+        }
+
+        /* Style des images */
+        .photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-left: 10px;
+            border: 2px solid white;
+            object-fit: cover;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Colas Digital Solutions</h1>
+</header>
+
+<nav>
+    <a href="presentation.html">Présentation</a>
+    <div class="dropdown">
+        <button class="dropbtn">Épreuve E5</button>
+        <div class="dropdown-content">
+            <a href="tableauSynthese.html">Tableau de synthèse</a>
+            <a href="missionFormation.html">Missions réalisées en formation</a>
+            <a href="missionEntreprise.html">Missions réalisées en entreprise</a>
+            <a href="certifications.html">Certifications</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Épreuve E6</button>
+        <div class="dropdown-content">
+            <a href="situation.html">Situation</a>
+            <a href="production.html">Production</a>
+        </div>
+    </div>
+    <a href="veille.html">Veille</a>
+</nav>
+
+<div class="container">
+    <h2 class="section-title">Mon service</h2>
+    <div class="content">
+        <h3 class="subsection-title">Le service Proxi</h3>
+        <p>Je travaille au sein du <strong>service Proxi</strong> de <strong>Colas Digital Solutions</strong>, situé à <strong>Issy-les-Moulineaux</strong>. Ce service est dédié au support informatique de proximité pour les collaborateurs, en assurant le bon fonctionnement des postes de travail, périphériques et services IT au quotidien.</p>
+
+        <h3 class="subsection-title">Direction du service</h3>
+        <p>Mon responsable est <strong>Alexandre Hebert</strong>, directeur du pôle informatique utilisateur. Il supervise les équipes techniques locales et pilote les stratégies de support numérique pour optimiser l’environnement de travail des utilisateurs. Il joue un rôle essentiel dans la transformation digitale et le maintien en condition opérationnelle des équipements.</p>
+
+        <!-- Organigramme -->
+        <div class="org-chart">
+            <!-- Niveau 1 : Sophie Bignaut -->
+            <div class="level">
+                <div class="box">Sophie Bignaut</div>
+                <img src="sophie.jpg" alt="Photo de Sophie Bignaut" class="photo" />
+            </div>
+
+            <!-- Ligne vers Alexandre -->
+            <div class="line"></div>
+
+            <!-- Niveau 2 : Alexandre Hebert -->
+            <div class="level">
+                <div class="box">Alexandre Hebert</div>
+                <img src="alexandre.jpg" alt="Photo d'Alexandre Hebert" class="photo" />
+            </div>
+
+            <!-- Flèche vers le niveau 3 -->
+            <div class="arrow"></div>
+
+            <!-- Niveau 3 : Yohan Do Cao, Killian Sanchez, Vincent Dauphin -->
+            <div class="level">
+                <div class="box">Yohan Do Cao</div>
+                <img src="defaut.jpg" alt="Photo de Yohan Do Cao" class="photo" />
+                <div class="box">Killian Sanchez</div>
+                <img src="defaut.jpg" alt="Photo de Killian Sanchez" class="photo" />
+                <div class="box">Vincent Dauphin</div>
+                <img src="vincent.jpg" alt="Photo de Vincent Dauphin" class="photo" />
+            </div>
+        </div>
+
+        <h3 class="subsection-title">Localisation</h3>
+        <p>Le bâtiment se trouve au <strong>1 Rue du Colonel Pierre Avia, 92130 Issy-les-Moulineaux</strong>, dans un quartier dynamique à proximité du parc Suzanne Lenglen et de l’Aquaboulevard.</p>
+
+        <!-- Google Maps intégrée -->
+        <div style="text-align:center; margin-top:20px;">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.1551804485963!2d2.270941676492747!3d48.832970171329244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6702c65821b9d%3A0x9ff3aeb4a37e6d8e!2s1%20Rue%20du%20Colonel%20Pierre%20Avia%2C%2092130%20Issy-les-Moulineaux!5e0!3m2!1sfr!2sfr!4v1716280279364!5m2!1sfr!2sfr"
+                width="100%"
+                height="350"
+                style="border:0; border-radius: 10px;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+        </div>
+    </div>
+
+    <a class="back-link" onclick="window.close();">&larr; Retour à la présentation</a>
+</div>
+
+</body>
+</html>

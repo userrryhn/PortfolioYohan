@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mission réalisée en entreprise - Portfolio de Yohan DO CAO</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and Fonts */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        header {
+            background-color: #0d6efd;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin: 0;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #333;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #FFFFFF;
+        }
+
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+
+        .dropbtn {
+            background-color: #333;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #0d6efd;
+        }
+
+        /* Main Container */
+        .container {
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        section {
+            margin-bottom: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #0d6efd;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out;
+            text-align: center;
+        }
+
+        .content {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            animation: slideIn 0.6s ease-out;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .content ul {
+            margin-left: 20px;
+            list-style-type: disc;
+        }
+
+        .content ul li {
+            margin-bottom: 20px;
+        }
+
+        /* Contact Button */
+        .contact-btn {
+            background-color: #f0a500;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background-color: #0d6efd;
+        }
+
+        /* Popup Modal */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .popup h2 {
+            font-size: 2rem;
+            color: #0d6efd;
+            margin-bottom: 20px;
+        }
+
+        .popup p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .popup a {
+            color: #0d6efd;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .popup a:hover {
+            color: #f0a500;
+        }
+
+        .popup .close-btn {
+            background-color: #f0a500;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .popup .close-btn:hover {
+            background-color: #0d6efd;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Portfolio de Yohan DO CAO</h1>
+</header>
+
+<!-- Navbar -->
+<nav>
+    <div class="dropdown">
+        <a href="presentation.html" class="dropbtn">Présentation</a>
+        <div class="dropdown-content">
+            <a href="apprenti.html">Apprenti</a>
+            <a href="entreprise.html">Entreprise</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Épreuve E5</button>
+        <div class="dropdown-content">
+            <a href="tableauSynthese.html">Tableau de synthèse</a>
+            <a href="missionFormation.html">Missions réalisées en formation</a>
+            <a href="missionEntreprise.html">Missions réalisées en entreprise</a>
+            <a href="certifications.html">Certifications</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Épreuve E6</button>
+        <div class="dropdown-content">
+            <a href="situation.html">Situation</a>
+            <a href="production.html">Production</a>
+        </div>
+    </div>
+    <a href="veille.html">Veille</a>
+</nav>
+
+<!-- Main Content -->
+<div class="container">
+    <section>
+        <h2 class="section-title">Missions réalisées en entreprise</h2>
+        <div class="content">
+            <p>Durant mon alternance chez COLAS DIGITAL SOLUTION, j'ai participé à plusieurs projets liés à la transformation numérique des entreprises. J'ai notamment contribué à la mise en place de solutions logicielles adaptées aux besoins spécifiques des clients, tout en respectant les exigences de sécurité et de performance. Ces missions m'ont permis de renforcer mes compétences techniques et ma capacité à travailler en équipe.</p>
+            
+            <h3>Quelques autres missions que j'ai réalisées :</h3>
+            <ul>
+                <li><strong>Réglage de problèmes réseaux généraux :</strong> J'ai résolu plusieurs problèmes liés aux réseaux de l'entreprise, assurant ainsi une meilleure stabilité et performance des systèmes internes.</li>
+                <li><strong>Installation de logiciels Windows et iOS :</strong> J'ai pris en charge l'installation et la configuration de divers logiciels sur des machines Windows et iOS pour améliorer l'efficacité des utilisateurs.</li>
+                <li><strong>Remasterisation de systèmes :</strong> J'ai effectué des remasterisations de systèmes, garantissant une mise à jour efficace des logiciels et des configurations système pour maintenir la sécurité et la performance des postes de travail.</li>
+                <li><strong>Installation d'un serveur membre :</strong> J'ai installé et configuré un serveur membre dans l'entreprise, ce qui a permis de renforcer la gestion des utilisateurs et l'accès aux ressources partagées.</li>
+            </ul>
+            <p>Ces missions m'ont permis d'acquérir une expérience précieuse dans la gestion des réseaux, l'installation de logiciels et la configuration de serveurs, me préparant ainsi pour des défis plus complexes dans le domaine de l'informatique.</p>
+        </div>
+    </section>
+</div>
+
+<!-- Popup Modal -->
+<div class="popup" id="contactPopup">
+    <div class="popup-content">
+        <h2>Contactez-moi</h2>
+        <p>N'hésitez pas à me contacter sur n'importe quel de ces moyens, j'y répondrai au plus vite ;)</p>
+        <p>Email : <a href="mailto:yohan.docao@gmail.com?subject=Nouveau Message">yohan.docao@gmail.com</a></p>
+        <p>Téléphone : <a href="tel:+33617775196">07 61 77 51 96</a></p>
+        <p>Adresse du campus: 2 Rue Lacaze, 75014 Paris</p>
+        <button class="close-btn" onclick="closePopup()">Fermer</button>
+    </div>
+</div>
+
+<script>
+    // Fonction pour ouvrir la popup
+    function openPopup() {
+        document.getElementById("contactPopup").style.display = "flex";
+    }
+
+    // Fonction pour fermer la popup
+    function closePopup() {
+        document.getElementById("contactPopup").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

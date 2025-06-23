@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Apprenti - Portfolio de Yohan DO CAO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+        }
+
+        header {
+            background-color: #0d6efd;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a, .dropbtn {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        nav a:hover, .dropbtn:hover {
+            color: #FFFFFF;
+        }
+
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            font-size: 0.9rem;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #0d6efd;
+        }
+
+        .container {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 70vh;
+        }
+
+        section {
+            margin-bottom: 30px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Portfolio de Yohan DO CAO</h1>
+</header>
+
+<nav>
+    <!-- Présentation avec menu déroulant et lien -->
+    <div class="dropdown">
+        <a href="presentation.html" class="dropbtn">Présentation</a>
+        <div class="dropdown-content">
+            <a href="apprenti.html">Apprenti</a>
+            <a href="entreprise.html">Entreprise</a>
+        </div>
+    </div>
+
+    <!-- Épreuve E5 -->
+    <div class="dropdown">
+        <button class="dropbtn">Épreuve E5</button>
+        <div class="dropdown-content">
+            <a href="tableauSynthese.html">Tableau de synthèse</a>
+            <a href="missionFormation.html">Missions réalisées en formation</a>
+            <a href="missionEntreprise.html">Missions réalisées en entreprise</a>
+            <a href="certifications.html">Certifications</a>
+        </div>
+    </div>
+
+    <!-- Épreuve E6 -->
+    <div class="dropdown">
+        <button class="dropbtn">Épreuve E6</button>
+        <div class="dropdown-content">
+            <a href="situation.html">Situation</a>
+            <a href="production.html">Production</a>
+        </div>
+    </div>
+
+    <a href="veille.html">Veille</a>
+</nav>
+
+<div class="container">
+    <section>
+        <!-- Contenu vide, à compléter -->
+    </section>
+</div>
+
+</body>
+</html>

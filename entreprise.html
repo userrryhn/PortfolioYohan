@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Entreprise - Portfolio de Yohan DO CAO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #0d6efd;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a, .dropbtn {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        nav a:hover, .dropbtn:hover {
+            color: #0d6efd;
+        }
+
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            z-index: 1;
+            border-radius: 4px;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            font-size: 0.9rem;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #0d6efd;
+        }
+
+        .container {
+            padding: 30px 20px;
+            max-width: 900px;
+            margin: auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #0d6efd;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            color: #0b5ed7;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        a {
+            color: #0d6efd;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Portfolio de Yohan DO CAO
+</header>
+
+<nav>
+    <!-- Présentation avec redirection + menu déroulant -->
+    <div class="dropdown">
+        <a href="presentation.html" class="dropbtn">Présentation</a>
+        <div class="dropdown-content">
+            <a href="apprenti.html">Apprenti</a>
+            <a href="entreprise.html">Entreprise</a>
+        </div>
+    </div>
+
+    <!-- Épreuve E5 -->
+    <div class="dropdown">
+        <button class="dropbtn">Épreuve E5</button>
+        <div class="dropdown-content">
+            <a href="tableauSynthese.html">Tableau de synthèse</a>
+            <a href="missionFormation.html">Missions réalisées en formation</a>
+            <a href="missionEntreprise.html">Missions réalisées en entreprise</a>
+            <a href="certifications.html">Certifications</a>
+        </div>
+    </div>
+
+    <!-- Épreuve E6 -->
+    <div class="dropdown">
+        <button class="dropbtn">Épreuve E6</button>
+        <div class="dropdown-content">
+            <a href="situation.html">Situation</a>
+            <a href="production.html">Production</a>
+        </div>
+    </div>
+
+    <a href="veille.html">Veille</a>
+</nav>
+
+<div class="container">
+    <h2>Présentation Complète de Colas Digital Solutions</h2>
+
+    <p><strong>Colas Digital Solutions</strong> (CDS) est la filiale numérique et innovante du groupe Colas, spécialisée dans les solutions digitales adaptées aux secteurs de la construction et des infrastructures. Cette entreprise s'inscrit dans la transformation digitale du groupe Colas, un leader mondial du secteur des travaux publics.</p>
+
+    <h3>Historique et Création</h3>
+    <p>Colas Digital Solutions a été créée dans les années 2010 en tant que réponse stratégique à l’évolution technologique et aux besoins croissants en digitalisation dans le secteur des infrastructures. Elle est née de la volonté du groupe Colas d'intégrer des technologies numériques avancées afin d'améliorer la productivité, la qualité et la sécurité de ses projets.</p>
+    <p>Le groupe Colas, fondé en 1929, a développé au fil des décennies une expertise solide en construction de routes, autoroutes, voies ferrées, infrastructures urbaines, et dans la maintenance des réseaux. Avec l’avènement du digital, Colas Digital Solutions a été mise en place pour piloter la modernisation numérique de ces activités.</p>
+
+    <h3>Signification du Nom "Colas"</h3>
+    <p>Le nom "Colas" provient de l’acronyme historique "Compagnie LOcale d’ASphaltage", qui reflète ses origines dans le domaine de la construction routière et de l’asphaltage. Aujourd’hui, Colas est un acteur global reconnu dans les travaux publics, couvrant un large spectre d’activités liées aux infrastructures.</p>
+
+    <h3>Missions et Activités de Colas Digital Solutions</h3>
+    <p>CDS agit comme un centre d’expertise numérique, développant et déployant des solutions innovantes pour répondre aux défis techniques et opérationnels de ses clients. Parmi ses principales missions :</p>
+    <ul>
+        <li>Développement de logiciels métiers adaptés aux besoins spécifiques du secteur (gestion de chantiers, suivi qualité, sécurité, etc.).</li>
+        <li>Implémentation de technologies de pointe : Internet des Objets (IoT), intelligence artificielle, analyse de données (Big Data) pour optimiser les performances des infrastructures.</li>
+        <li>Accompagnement dans la transformation digitale des filiales Colas et des partenaires externes.</li>
+        <li>Création d’outils de modélisation 3D, réalité augmentée, et systèmes embarqués pour faciliter la prise de décision et la formation.</li>
+    </ul>
+
+    <h3>Clients et Partenaires</h3>
+    <p>Colas Digital Solutions s'adresse en priorité aux filiales du groupe Colas à travers le monde, mais collabore également avec des acteurs publics et privés dans le domaine des infrastructures, du transport, et de l’urbanisme.</p>
+    <p>Ses clients incluent les collectivités territoriales, les gestionnaires d’autoroutes, les sociétés de construction, ainsi que des organismes engagés dans la transition écologique et la mobilité durable.</p>
+
+    <h3>Valeurs et Vision</h3>
+    <p>CDS incarne les valeurs d’innovation, d’agilité et de qualité du groupe Colas, en y ajoutant une dimension numérique forte :</p>
+    <ul>
+        <li><strong>Innovation continue :</strong> Toujours à la pointe des nouvelles technologies pour anticiper les besoins du secteur.</li>
+        <li><strong>Orientation client :</strong> Solutions sur-mesure pour répondre précisément aux défis opérationnels.</li>
+        <li><strong>Soutien à la transition écologique :</strong> Favoriser des infrastructures plus durables grâce au digital.</li>
+        <li><strong>Collaboration :</strong> Travail en équipe avec les filiales et partenaires pour co-construire l’avenir.</li>
+    </ul>
+
+    <h3>Pourquoi Colas Digital Solutions est-elle importante ?</h3>
+    <p>Dans un monde où les chantiers et infrastructures sont de plus en plus complexes, où la sécurité et l’efficacité sont primordiales, la digitalisation est un levier clé. CDS permet d’optimiser la gestion des projets, de réduire les coûts, d’améliorer la traçabilité, et d’assurer un suivi en temps réel grâce aux outils numériques. Cette transformation est indispensable pour rester compétitif à l’échelle internationale.</p>
+
+    <h3>Quelques faits clés sur le groupe Colas et CDS :</h3>
+    <ul>
+        <li><strong>Colas</strong> est présent dans plus de 50 pays, employant environ 55 000 collaborateurs.</li>
+        <li>CDS fait partie intégrante de la stratégie "Colas 2030" pour accélérer la digitalisation.</li>
+        <li>Le groupe réalise chaque année plus de 12 milliards d'euros de chiffre d’affaires.</li>
+        <li>CDS contribue activement à des projets innovants liés à la smart city et à la mobilité intelligente.</li>
+    </ul>
+
+    <p>Pour en savoir plus, vous pouvez consulter le site officiel de <a href="https://www.colas.com/fr" target="_blank" rel="noopener noreferrer">Colas</a> ou la page dédiée à <a href="https://colasdigitalsolutions.com" target="_blank" rel="noopener noreferrer">Colas Digital Solutions</a>.</p>
+</div>
+
+</body>
+</html>
