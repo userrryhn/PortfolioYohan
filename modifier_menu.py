@@ -1,7 +1,8 @@
+
 import os
 
 # Nouveau bloc HTML pour remplacer l'ancien menu Présentation
-new_presentation_block = '''
+new_presentation_block = """
 <div class="dropdown">
     <button class="dropbtn">Présentation</button>
     <div class="dropdown-content">
@@ -10,7 +11,7 @@ new_presentation_block = '''
         <a href="entreprise.html">Entreprise</a>
     </div>
 </div>
-'''
+"""
 
 # Marqueurs pour trouver l'ancien bloc
 start_marker = '<div class="presentation-dropdown">'
