@@ -5,59 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Veille - Portfolio de Yohan DO CAO</title>
     <style>
-        /* Global Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body and Fonts */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f7fc;
             color: #333;
-            margin: 0;
-            padding: 0;
         }
-
-        /* Header */
         header {
             background-color: #0d6efd;
             color: white;
             padding: 40px 20px;
             text-align: center;
         }
-
-        header h1 {
-            font-size: 2.8rem;
-            margin: 0;
-        }
-
-        /* Navigation Bar */
         nav {
             background-color: #333;
             padding: 15px 0;
             text-align: center;
         }
-
         nav a {
             color: white;
             margin: 0 20px;
             text-decoration: none;
             font-weight: bold;
         }
-
-        nav a:hover {
-            color: #FFFFFF;
-        }
-
-        /* Dropdown for E5 and E6 */
-        .dropdown {
-            display: inline-block;
-            position: relative;
-        }
-
+        .dropdown, .presentation-dropdown { display: inline-block; position: relative; }
         .dropbtn {
             background-color: #333;
             color: white;
@@ -66,74 +37,22 @@
             cursor: pointer;
             font-weight: bold;
         }
-
-        .dropdown-content {
+        .dropdown-content, .presentation-dropdown-content {
             display: none;
             position: absolute;
             background-color: #333;
             min-width: 160px;
+            top: 100%; left: 0;
             z-index: 1;
-            top: 100%;
-            left: 0;
         }
-
-        .dropdown-content a {
+        .dropdown-content a, .presentation-dropdown-content a {
             color: white;
             padding: 12px 20px;
             text-decoration: none;
             display: block;
         }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #0d6efd;
-        }
-
-        /* Dropdown for Présentation */
-        .presentation-dropdown {
-            display: inline-block;
-            position: relative;
-        }
-
-        .presentation-dropdown .dropbtn {
-            color: white;
-            font-weight: bold;
-            margin: 0 20px;
-            text-decoration: none;
-            padding: 12px 20px;
-            cursor: pointer;
-            display: inline-block;
-        }
-
-        .presentation-dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #333;
-            min-width: 160px;
-            z-index: 1;
-            top: 100%;
-            left: 0;
-        }
-
-        .presentation-dropdown-content a {
-            color: white;
-            padding: 12px 20px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .presentation-dropdown:hover .presentation-dropdown-content {
-            display: block;
-        }
-
-        .presentation-dropdown-content a:hover {
-            background-color: #0d6efd;
-        }
-
-        /* Main Container */
+        .dropdown:hover .dropdown-content,
+        .presentation-dropdown:hover .presentation-dropdown-content { display: block; }
         .container {
             padding: 30px;
             display: flex;
@@ -141,56 +60,51 @@
             align-items: center;
             flex-direction: column;
         }
-
         section {
             margin-bottom: 50px;
-            width: 100%;
-            display: flex;
+            width: 100%; display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
         }
-
         .section-title {
             font-size: 2rem;
             font-weight: bold;
             color: #0d6efd;
             margin-bottom: 20px;
-            animation: fadeInUp 1s ease-out;
             text-align: center;
         }
-
         .content {
             background-color: white;
             padding: 25px;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            animation: slideIn 0.6s ease-out;
             line-height: 1.6;
             max-width: 900px;
-            margin: 0 auto;
+            margin: auto;
             text-align: center;
         }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(30px); }
-            100% { opacity: 1; transform: translateY(0); }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
         }
-
-        @keyframes slideIn {
-            0% { opacity: 0; transform: translateX(-50px); }
-            100% { opacity: 1; transform: translateX(0); }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th {
+            background-color: #0d6efd;
+            color: white;
+            padding: 10px;
+        }
+        td {
+            padding: 10px;
+            background-color: #fff;
         }
     </style>
 </head>
 <body>
-
-<header>
-    <h1>Portfolio de Yohan DO CAO</h1>
-</header>
-
-<!-- Navbar -->
+<header><h1>Portfolio de Yohan DO CAO</h1></header>
 <nav>
     <div class="presentation-dropdown">
         <a href="index.html" class="dropbtn">Présentation</a>
@@ -199,7 +113,6 @@
             <a href="entreprise.html">Entreprise</a>
         </div>
     </div>
-
     <div class="dropdown">
         <button class="dropbtn">Épreuve E5</button>
         <div class="dropdown-content">
@@ -209,7 +122,6 @@
             <a href="certifications.html">Certifications</a>
         </div>
     </div>
-
     <div class="dropdown">
         <button class="dropbtn">Épreuve E6</button>
         <div class="dropdown-content">
@@ -217,38 +129,52 @@
             <a href="production.html">Production</a>
         </div>
     </div>
-
     <a href="veille.html">Veille</a>
 </nav>
-
-<!-- Main Content -->
 <div class="container">
     <section>
         <h2 class="section-title">Veille Technologique : L’avancement de l’Intelligence Artificielle</h2>
         <div class="content">
             <p>
-                Dans le cadre de mon BTS SIO, j’ai mis en place une <strong>veille technologique portant sur l’avancement de l’intelligence artificielle (IA)</strong>. 
-                L’objectif de cette veille est de suivre l’évolution rapide de cette technologie, ses nouvelles applications ainsi que son impact dans le monde professionnel.
+                Dans le cadre de mon BTS SIO, j’ai mis en place une <strong>veille technologique portant sur l’avancement de l’intelligence artificielle (IA)</strong>.
+                L’objectif est de suivre les innovations, les risques, les opportunités et l’impact de l’IA dans les métiers du numérique.
             </p>
-
             <p>
-                À travers cette veille, je m’intéresse notamment aux domaines suivants : l’IA dans la cybersécurité, l’automatisation des tâches, 
-                les assistants intelligents, l’analyse de données, ainsi que l’utilisation de l’IA dans les entreprises du secteur informatique.
-            </p>
-
-            <p>
-                Pour réaliser cette veille, j’utilise différentes sources d’information telles que : des sites spécialisés, la presse informatique, 
-                des vidéos, des réseaux professionnels et des publications techniques. Cela me permet de rester informé des dernières innovations 
-                et de mieux comprendre les enjeux actuels et futurs de l’intelligence artificielle.
-            </p>
-
-            <p>
-                Cette veille me permet également d’enrichir ma culture numérique, d’élargir mes compétences et de mieux me préparer au monde professionnel, 
-                dans un secteur où l’IA prend une place de plus en plus importante.
+                Cette veille couvre la cybersécurité, l’automatisation, les assistants intelligents, l’analyse de données et l’usage de l’IA en entreprise.
             </p>
         </div>
     </section>
-</div>
 
+    <!-- OUTILS DE VEILLE -->
+    <section>
+        <h2 class="section-title">Outils de Veille Utilisés</h2>
+        <div class="content">
+            <p>Voici les principaux outils que j’utilise pour réaliser ma veille technologique :</p>
+            <ul style="text-align:left; margin-top:15px;">
+                <!-- À remplir -->
+            </ul>
+        </div>
+    </section>
+
+    <!-- TABLEAU DE VEILLE -->
+    <section>
+        <h2 class="section-title">Tableau de Veille</h2>
+        <div class="content">
+            <p>Ce tableau récapitule les informations importantes relevées durant ma veille :</p>
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Source</th>
+                    <th>Sujet</th>
+                    <th>Résumé</th>
+                </tr>
+                
+                
+                
+            </table>
+        </div>
+    </section>
+
+</div>
 </body>
 </html>
