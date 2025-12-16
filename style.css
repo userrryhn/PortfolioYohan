@@ -1,0 +1,21 @@
+/* Le minimum pour le responsive */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* Images adaptables */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Quand l’écran est petit (téléphone) */
+@media screen and (max-width: 768px) {
+  body {
+    background-color: #f2f2f2;
+  }
+}
