@@ -1,28 +1,24 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Mission réalisée en formation - Portfolio de Yohan DO CAO</title>
     <style>
-        /* Global Reset */
+        /* Reset global */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Body and Fonts */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f7fc;
             color: #333;
-            margin: 0;
-            padding: 0;
         }
 
-        /* Header */
+        /* Header inchangé */
         header {
             background-color: #0d6efd;
             color: white;
@@ -35,7 +31,11 @@
             margin: 0;
         }
 
-        /* Navigation Bar */
+        header p {
+            font-size: 1.2rem;
+        }
+
+        /* Navbar inchangé */
         nav {
             background-color: #333;
             padding: 15px 0;
@@ -65,7 +65,6 @@
             padding: 12px 20px;
             border: none;
             font-weight: bold;
-            /* cursor: pointer;  cursor ajouté par nav a et dropbtn */
             text-align: center;
             display: inline-block;
         }
@@ -94,68 +93,79 @@
             color: white;
         }
 
-        /* Main Container */
+        /* Container principal */
         .container {
-            padding: 30px;
+            padding: 30px 20px;
             display: flex;
-            justify-content: center;
-            align-items: center;
             flex-direction: column;
+            align-items: center;
         }
 
-        section {
-            margin-bottom: 50px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
+        /* Section titre */
         .section-title {
             font-size: 2rem;
             font-weight: bold;
             color: #0d6efd;
-            margin-bottom: 20px;
-            animation: fadeInUp 1s ease-out;
+            margin-bottom: 30px;
             text-align: center;
+            position: relative;
         }
 
-        .content {
-            background-color: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            animation: slideIn 0.6s ease-out;
-            line-height: 1.6;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: left;
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #0d6efd;
+            margin: 10px auto 0;
+            border-radius: 2px;
         }
 
-        .content ul {
-            margin-left: 20px;
-            list-style-type: disc;
+        /* Grille des missions */
+        .missions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 1200px;
         }
 
-        .content ul li {
-            margin-bottom: 20px;
+        /* Cartes des missions */
+        .mission-card {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        /* Contact Button */
-        .contact-btn {
-            background-color: #f0a500;
-            color: white;
-            padding: 10px 20px;
-            border: none;
+        .mission-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .mission-card h3 {
+            color: #0d6efd;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .mission-card p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .mission-card a {
+            color: #0d6efd;
+            text-decoration: none;
             font-weight: bold;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
         }
 
-        .contact-btn:hover {
-            background-color: #0d6efd;
+        .mission-card a:hover {
+            text-decoration: underline;
         }
 
         /* Popup Modal */
@@ -166,7 +176,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: rgba(0,0,0,0.6);
             justify-content: center;
             align-items: center;
         }
@@ -214,101 +224,92 @@
         .popup .close-btn:hover {
             background-color: #0d6efd;
         }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideIn {
-            0% {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
     </style>
 </head>
 <body>
     <header>
-    <h1>Yohan DO CAO</h1>
-    <p>BTS SIO SISR – Apprenti Technicien Support</p>
-</header>
+        <h1>Yohan DO CAO</h1>
+        <p>BTS SIO SISR – Apprenti Technicien Support</p>
+    </header>
 
     <!-- Navbar -->
     <nav>
-    <!-- Présentation avec menu déroulant + lien cliquable -->
         <a href="index.html">Accueil</a>
 
-    <div class="dropdown">
-        <a class="dropbtn">Présentation</a>
-        <div class="dropdown-content">
-            <a href="apprenti.html">Apprenti</a>
-            <a href="entreprise.html">Entreprise</a>
-            <a href="colas.html">Mon service</a>
+        <div class="dropdown">
+            <a class="dropbtn">Présentation</a>
+            <div class="dropdown-content">
+                <a href="apprenti.html">Apprenti</a>
+                <a href="entreprise.html">Entreprise</a>
+                <a href="colas.html">Mon service</a>
+            </div>
         </div>
-    </div>
 
-    <!-- Épreuve E5 -->
-    <div class="dropdown">
-        <button class="dropbtn">Épreuve E5</button>
-        <div class="dropdown-content">
-            <a href="tableauSynthese.html">Tableau de synthèse</a>
-            <a href="missionFormation.html">Missions réalisées en formation</a>
-            <a href="missionEntreprise.html">Missions réalisées en entreprise</a>
-            <a href="certifications.html">Certifications</a>
+        <div class="dropdown">
+            <button class="dropbtn">Épreuve E5</button>
+            <div class="dropdown-content">
+                <a href="tableauSynthese.html">Tableau de synthèse</a>
+                <a href="missionFormation.html">Missions réalisées en formation</a>
+                <a href="missionEntreprise.html">Missions réalisées en entreprise</a>
+                <a href="certifications.html">Certifications</a>
+            </div>
         </div>
-    </div>
 
-    <!-- Épreuve E6 -->
-    <div class="dropdown">
-        <button class="dropbtn">Épreuve E6</button>
-        <div class="dropdown-content">
-            <a href="situation.html">Situation</a>
-            <a href="production.html">Production</a>
+        <div class="dropdown">
+            <button class="dropbtn">Épreuve E6</button>
+            <div class="dropdown-content">
+                <a href="situation.html">Situation</a>
+                <a href="production.html">Production</a>
+            </div>
         </div>
-    </div>
 
-    <a href="veille.html">Veille</a>
-</nav>
+        <a href="veille.html">Veille</a>
+    </nav>
 
     <!-- Main Content -->
     <div class="container">
         <section>
             <h2 class="section-title">Missions réalisées en formation</h2>
-            <div class="content">
-                <p>Durant ma formation au CFA Campus Montsouris, j'ai eu l'opportunité de travailler sur plusieurs aspects techniques, ce qui m'a permis de consolider mes compétences et de développer une expertise plus pointue dans le domaine des réseaux et de l'administration système. Voici un aperçu des missions auxquelles j'ai participé :</p>
-                <ul>
-                    <li><strong><a href="ACL.pdf" target="_blank">Atelier ACL (Access Control List)</a></strong> : J’ai appris à gérer les permissions avancées sur les fichiers et dossiers en utilisant les ACL sous Linux. Cela m’a permis d’attribuer des droits spécifiques à différents utilisateurs ou groupes, renforçant la sécurité du système.</li>
+            <div class="missions-grid">
+                <div class="mission-card">
+                    <h3><a href="ACL.pdf" target="_blank">Atelier ACL (Access Control List)</a></h3>
+                    <p>J’ai appris à gérer les permissions avancées sur les fichiers et dossiers en utilisant les ACL sous Linux. Cela m’a permis d’attribuer des droits spécifiques à différents utilisateurs ou groupes, renforçant la sécurité du système.</p>
+                </div>
 
-                    <li><strong><a href="cockpit.pdf" target="_blank">Installation de Cockpit sur Debian 11 et 12</a></strong> : J’ai mis en place Cockpit, un outil d’administration système accessible via navigateur. Grâce à cet outil, j’ai pu superviser les ressources du serveur, gérer les services, les comptes et les mises à jour de manière intuitive.</li>
+                <div class="mission-card">
+                    <h3><a href="cockpit.pdf" target="_blank">Installation de Cockpit sur Debian 11 et 12</a></h3>
+                    <p>J’ai mis en place Cockpit, un outil d’administration système accessible via navigateur. Grâce à cet outil, j’ai pu superviser les ressources du serveur, gérer les services, les comptes et les mises à jour de manière intuitive.</p>
+                </div>
 
-                    <li><strong><a href="hmail.pdf" target="_blank">Configuration de hMailServer sur Windows Server 2022</a></strong> : J’ai installé et configuré hMailServer, un serveur de messagerie pour Windows. Cette expérience m’a permis de comprendre le fonctionnement des services SMTP, IMAP, POP3 et d’assurer le bon routage des e-mails internes.</li>
+                <div class="mission-card">
+                    <h3><a href="hmail.pdf" target="_blank">Configuration de hMailServer sur Windows Server 2022</a></h3>
+                    <p>J’ai installé et configuré hMailServer, un serveur de messagerie pour Windows. Cette expérience m’a permis de comprendre le fonctionnement des services SMTP, IMAP, POP3 et d’assurer le bon routage des e-mails internes.</p>
+                </div>
 
-                    <li><strong><a href="DCHP.pdf" target="_blank">Configuration du service DHCP</a></strong> : J’ai déployé un serveur DHCP permettant de distribuer automatiquement des adresses IP aux clients du réseau. Cela incluait la définition de plages d’adresses, la réservation d’IP fixes et la configuration des options réseau (DNS, passerelle, etc.).</li>
+                <div class="mission-card">
+                    <h3><a href="DCHP.pdf" target="_blank">Configuration du service DHCP</a></h3>
+                    <p>J’ai déployé un serveur DHCP permettant de distribuer automatiquement des adresses IP aux clients du réseau. Cela incluait la définition de plages d’adresses, la réservation d’IP fixes et la configuration des options réseau (DNS, passerelle, etc.).</p>
+                </div>
 
-                    <li><strong><a href="Creation base de données.pdf" target="_blank">Création de bases de données</a></strong> : J’ai conçu et exploité une base de données relationnelle en définissant les tables, les relations et les requêtes SQL afin de stocker et gérer des données de manière structurée et fiable.</li>
+                <div class="mission-card">
+                    <h3><a href="Creation base de données.pdf" target="_blank">Création de bases de données</a></h3>
+                    <p>J’ai conçu et exploité une base de données relationnelle en définissant les tables, les relations et les requêtes SQL afin de stocker et gérer des données de manière structurée et fiable.</p>
+                </div>
 
-                    <li><strong><a href="RAID.pdf" target="_blank">Mise en place de machine virtuelle pour gestion du RAID</a></strong> : J'ai configuré et déployé des machines virtuelles afin de gérer les configurations RAID, optimisant ainsi la gestion de l’espace disque et assurant la redondance des données pour garantir leur disponibilité et sécurité.</li>
+                <div class="mission-card">
+                    <h3><a href="RAID.pdf" target="_blank">Mise en place de machine virtuelle pour gestion du RAID</a></h3>
+                    <p>J'ai configuré et déployé des machines virtuelles afin de gérer les configurations RAID, optimisant ainsi la gestion de l’espace disque et assurant la redondance des données pour garantir leur disponibilité et sécurité.</p>
+                </div>
 
-                    <li><strong><a href="EFS.pdf" target="_blank">Configuration de disque et EFS</a></strong> : J'ai implémenté et administré des solutions de disque EFS pour chiffrer les données au niveau du système de fichiers, garantissant ainsi leur confidentialité et leur intégrité tout en facilitant la gestion sécurisée des informations sensibles.</li>
+                <div class="mission-card">
+                    <h3><a href="EFS.pdf" target="_blank">Configuration de disque et EFS</a></h3>
+                    <p>J'ai implémenté et administré des solutions de disque EFS pour chiffrer les données au niveau du système de fichiers, garantissant ainsi leur confidentialité et leur intégrité tout en facilitant la gestion sécurisée des informations sensibles.</p>
+                </div>
 
-                    <li><strong><a href="ICMPARP.pdf" target="_blank">Étude et mise en œuvre des protocoles ICMP et ARP</a></strong> : J'ai configuré et géré les protocoles ICMP pour le diagnostic réseau et utilisé ARP pour résoudre les adresses IP en adresses MAC, garantissant ainsi une communication fluide et une optimisation des performances du réseau local.</li>
-                 </ul>
-
-                <p>Ces missions ont été des expériences enrichissantes, me permettant d'acquérir des compétences techniques et théoriques solides en informatique et réseaux.</p>
+                <div class="mission-card">
+                    <h3><a href="ICMPARP.pdf" target="_blank">Étude et mise en œuvre des protocoles ICMP et ARP</a></h3>
+                    <p>J'ai configuré et géré les protocoles ICMP pour le diagnostic réseau et utilisé ARP pour résoudre les adresses IP en adresses MAC, garantissant ainsi une communication fluide et une optimisation des performances du réseau local.</p>
+                </div>
             </div>
         </section>
     </div>
@@ -318,7 +319,7 @@
         <div class="popup-content">
             <h2>Contactez-moi</h2>
             <p>N'hésitez pas à me contacter sur n'importe quel de ces moyens, j'y répondrai au plus vite ;)</p>
-            <p>Email : <a href="mailto:yohan.docao@gmail.com?subject=Nouveau Message">yohan.docao@gmail.com</a></p> <!-- E-mail link -->
+            <p>Email : <a href="mailto:yohan.docao@gmail.com?subject=Nouveau Message">yohan.docao@gmail.com</a></p>
             <p>Téléphone : <a href="tel:+33617775196">07 61 77 51 96</a></p>
             <p>Adresse du campus: 2 Rue Lacaze, 75014 Paris</p>
             <button class="close-btn" onclick="closePopup()">Fermer</button>
@@ -326,12 +327,10 @@
     </div>
 
     <script>
-        // Fonction pour ouvrir la popup
         function openPopup() {
             document.getElementById("contactPopup").style.display = "flex";
         }
 
-        // Fonction pour fermer la popup
         function closePopup() {
             document.getElementById("contactPopup").style.display = "none";
         }
