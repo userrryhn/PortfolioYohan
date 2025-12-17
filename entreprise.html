@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Entreprise - Portfolio de Yohan DO CAO</title>
@@ -19,6 +18,7 @@
             line-height: 1.6;
         }
 
+        /* HEADER */
         header {
             background-color: #0d6efd;
             color: white;
@@ -28,6 +28,7 @@
             font-weight: bold;
         }
 
+        /* NAV */
         nav {
             background-color: #333;
             padding: 10px 0;
@@ -79,13 +80,19 @@
             background-color: #0d6efd;
         }
 
+        /* CONTAINER & CARDS */
         .container {
             padding: 30px 20px;
             max-width: 900px;
             margin: auto;
+        }
+
+        .card {
             background-color: white;
+            padding: 20px;
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
         }
 
         h2 {
@@ -96,14 +103,22 @@
 
         h3 {
             color: #0b5ed7;
-            margin-top: 25px;
             margin-bottom: 10px;
             font-size: 1.3rem;
         }
 
         p {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-size: 1rem;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        li {
+            margin-bottom: 8px;
         }
 
         a {
@@ -114,18 +129,23 @@
         a:hover {
             text-decoration: underline;
         }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
 
 <header>
-    Portfolio de Yohan DO CAO
+    <h1>Yohan DO CAO</h1>
+    <p>BTS SIO SISR – Apprenti Technicien Support</p>
 </header>
 
 <nav>
-    <!-- Présentation avec menu déroulant + lien cliquable -->
-        <a href="index.html">Accueil</a>
-
+    <a href="index.html">Accueil</a>
     <div class="dropdown">
         <a class="dropbtn">Présentation</a>
         <div class="dropdown-content">
@@ -135,7 +155,6 @@
         </div>
     </div>
 
-    <!-- Épreuve E5 -->
     <div class="dropdown">
         <button class="dropbtn">Épreuve E5</button>
         <div class="dropdown-content">
@@ -146,7 +165,6 @@
         </div>
     </div>
 
-    <!-- Épreuve E6 -->
     <div class="dropdown">
         <button class="dropbtn">Épreuve E6</button>
         <div class="dropdown-content">
@@ -159,51 +177,70 @@
 </nav>
 
 <div class="container">
-    <h2>Présentation Complète de Colas Digital Solutions</h2>
 
-    <p><strong>Colas Digital Solutions</strong> (CDS) est la filiale numérique et innovante du groupe Colas, spécialisée dans les solutions digitales adaptées aux secteurs de la construction et des infrastructures. Cette entreprise s'inscrit dans la transformation digitale du groupe Colas, un leader mondial du secteur des travaux publics.</p>
+    <h2>Présentation de Colas Digital Solutions</h2>
 
-    <h3>Historique et Création</h3>
-    <p>Colas Digital Solutions a été créée dans les années 2010 en tant que réponse stratégique à l’évolution technologique et aux besoins croissants en digitalisation dans le secteur des infrastructures. Elle est née de la volonté du groupe Colas d'intégrer des technologies numériques avancées afin d'améliorer la productivité, la qualité et la sécurité de ses projets.</p>
-    <p>Le groupe Colas, fondé en 1929, a développé au fil des décennies une expertise solide en construction de routes, autoroutes, voies ferrées, infrastructures urbaines, et dans la maintenance des réseaux. Avec l’avènement du digital, Colas Digital Solutions a été mise en place pour piloter la modernisation numérique de ces activités.</p>
+    <section class="card">
+        <h3>Qui sommes-nous ?</h3>
+        <p><strong>Colas Digital Solutions (CDS)</strong> est la filiale numérique du groupe Colas, spécialisée dans les solutions digitales pour la construction et les infrastructures.</p>
+    </section>
 
-    <h3>Signification du Nom "Colas"</h3>
-    <p>Le nom "Colas" provient de l’acronyme historique "Compagnie LOcale d’ASphaltage", qui reflète ses origines dans le domaine de la construction routière et de l’asphaltage. Aujourd’hui, Colas est un acteur global reconnu dans les travaux publics, couvrant un large spectre d’activités liées aux infrastructures.</p>
+    <section class="card">
+        <h3>Historique</h3>
+        <ul>
+            <li>Créée dans les années 2010 pour accompagner la digitalisation des infrastructures.</li>
+            <li>Filiale du groupe Colas, fondé en 1929.</li>
+            <li>Intégration des technologies numériques pour améliorer productivité, qualité et sécurité.</li>
+        </ul>
+    </section>
 
-    <h3>Missions et Activités de Colas Digital Solutions</h3>
-    <p>CDS agit comme un centre d’expertise numérique, développant et déployant des solutions innovantes pour répondre aux défis techniques et opérationnels de ses clients. Parmi ses principales missions :</p>
-    <ul>
-        <li>Développement de logiciels métiers adaptés aux besoins spécifiques du secteur (gestion de chantiers, suivi qualité, sécurité, etc.).</li>
-        <li>Implémentation de technologies de pointe : Internet des Objets (IoT), intelligence artificielle, analyse de données (Big Data) pour optimiser les performances des infrastructures.</li>
-        <li>Accompagnement dans la transformation digitale des filiales Colas et des partenaires externes.</li>
-        <li>Création d’outils de modélisation 3D, réalité augmentée, et systèmes embarqués pour faciliter la prise de décision et la formation.</li>
-    </ul>
+    <section class="card">
+        <h3>Nos missions</h3>
+        <ul>
+            <li>Développement de logiciels métiers</li>
+            <li>Implémentation IoT, IA et Big Data</li>
+            <li>Accompagnement dans la transformation digitale des filiales</li>
+            <li>Outils 3D, réalité augmentée et systèmes embarqués</li>
+        </ul>
+    </section>
 
-    <h3>Clients et Partenaires</h3>
-    <p>Colas Digital Solutions s'adresse en priorité aux filiales du groupe Colas à travers le monde, mais collabore également avec des acteurs publics et privés dans le domaine des infrastructures, du transport, et de l’urbanisme.</p>
-    <p>Ses clients incluent les collectivités territoriales, les gestionnaires d’autoroutes, les sociétés de construction, ainsi que des organismes engagés dans la transition écologique et la mobilité durable.</p>
+    <section class="card">
+        <h3>Clients et partenaires</h3>
+        <p>Filiales Colas, acteurs publics et privés, collectivités, gestionnaires d’autoroutes et sociétés de construction.</p>
+    </section>
 
-    <h3>Valeurs et Vision</h3>
-    <p>CDS incarne les valeurs d’innovation, d’agilité et de qualité du groupe Colas, en y ajoutant une dimension numérique forte :</p>
-    <ul>
-        <li><strong>Innovation continue :</strong> Toujours à la pointe des nouvelles technologies pour anticiper les besoins du secteur.</li>
-        <li><strong>Orientation client :</strong> Solutions sur-mesure pour répondre précisément aux défis opérationnels.</li>
-        <li><strong>Soutien à la transition écologique :</strong> Favoriser des infrastructures plus durables grâce au digital.</li>
-        <li><strong>Collaboration :</strong> Travail en équipe avec les filiales et partenaires pour co-construire l’avenir.</li>
-    </ul>
+    <section class="card">
+        <h3>Valeurs et vision</h3>
+        <ul>
+            <li><strong>Innovation :</strong> Toujours à la pointe des technologies</li>
+            <li><strong>Orientation client :</strong> Solutions sur-mesure</li>
+            <li><strong>Transition écologique :</strong> Infrastructures durables</li>
+            <li><strong>Collaboration :</strong> Travail en équipe avec filiales et partenaires</li>
+        </ul>
+    </section>
 
-    <h3>Pourquoi Colas Digital Solutions est-elle importante ?</h3>
-    <p>Dans un monde où les chantiers et infrastructures sont de plus en plus complexes, où la sécurité et l’efficacité sont primordiales, la digitalisation est un levier clé. CDS permet d’optimiser la gestion des projets, de réduire les coûts, d’améliorer la traçabilité, et d’assurer un suivi en temps réel grâce aux outils numériques. Cette transformation est indispensable pour rester compétitif à l’échelle internationale.</p>
+    <section class="card">
+        <h3>Pourquoi CDS est important ?</h3>
+        <p>CDS optimise la gestion des projets, réduit les coûts, améliore la traçabilité et assure un suivi en temps réel grâce aux outils numériques.</p>
+    </section>
 
-    <h3>Quelques faits clés sur le groupe Colas et CDS :</h3>
-    <ul>
-        <li><strong>Colas</strong> est présent dans plus de 50 pays, employant environ 55 000 collaborateurs.</li>
-        <li>CDS fait partie intégrante de la stratégie "Colas 2030" pour accélérer la digitalisation.</li>
-        <li>Le groupe réalise chaque année plus de 12 milliards d'euros de chiffre d’affaires.</li>
-        <li>CDS contribue activement à des projets innovants liés à la smart city et à la mobilité intelligente.</li>
-    </ul>
+    <section class="card">
+        <h3>Quelques chiffres clés</h3>
+        <ul>
+            <li>Présent dans plus de 50 pays, ~55 000 collaborateurs</li>
+            <li>Partie intégrante de la stratégie "Colas 2030"</li>
+            <li>Chiffre d’affaires du groupe : >12 milliards €/an</li>
+            <li>Projets innovants en smart city et mobilité intelligente</li>
+        </ul>
+    </section>
 
-    <p>Pour en savoir plus, vous pouvez consulter le site officiel de <a href="https://www.colas.com/fr" target="_blank" rel="noopener noreferrer">Colas</a> ou la page dédiée à <a href="https://colasdigitalsolutions.com" target="_blank" rel="noopener noreferrer">Colas Digital Solutions</a>.</p>
+    <section class="card">
+        <p>Pour en savoir plus : 
+            <a href="https://www.colas.com/fr" target="_blank" rel="noopener noreferrer">Site Colas</a> | 
+            <a href="https://colasdigitalsolutions.com" target="_blank" rel="noopener noreferrer">CDS</a>
+        </p>
+    </section>
+
 </div>
 
 </body>
