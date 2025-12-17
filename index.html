@@ -81,17 +81,21 @@
             padding: 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* On remonte un peu le contenu */
             flex-direction: column;
+            min-height: 70vh; /* Ajoute une hauteur minimum pour occuper un peu plus d'espace vertical */
         }
 
         section {
             margin-bottom: 30px;
             width: 100%;
+            max-width: 800px;
+            padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            margin: 0 auto; /* Centrer horizontalement */
         }
 
         .bubble-container {
@@ -114,7 +118,8 @@
         .bubble {
             background-color: white;
             padding: 20px 30px;
-            max-width: 80%;
+            max-width: 100%;
+            width: 100%;
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             display: flex;
@@ -150,16 +155,6 @@
 
         .contact-btn:hover, .cv-btn:hover {
             background-color: #0b5ed7;
-        }
-
-        /* Last update text */
-        .last-update {
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            font-size: 0.8rem;
-            color: #333;
-            font-style: italic;
         }
 
         .popup {
@@ -229,6 +224,16 @@
         .more-link:hover {
             text-decoration: underline;
         }
+
+        .last-update {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 0.8rem;
+            color: #333;
+            font-style: italic;
+        }
+
     </style>
 </head>
 <body>
@@ -275,20 +280,16 @@
 <div class="container">
     <section>
         <div class="bubble-container">
-
-            <!-- Page de bienvenue -->
             <div>
-                <div class="bubble-title">Bienvenue sur mon portfolio !</div>
+                <div class="bubble-title">Bienvenue sur mon Portfolio !</div>
                 <div class="bubble">
-                    <p>Bonjour et bienvenue ! Je suis Yohan DO CAO, un passionné par le monde numérique et l'informatique. Ce portfolio présente mon parcours, mes projets et mes compétences dans le domaine des systèmes numériques.</p>
-                    <p>Explorez les différentes sections pour en apprendre davantage sur mes formations, mes expériences professionnelles et mes réalisations. N'hésitez pas à me contacter ou à consulter mon CV en cliquant sur les boutons ci-dessous.</p>
+                    <p>Bienvenue sur mon portfolio. Ici, vous pourrez découvrir mes projets professionnels, mes expériences en entreprise ainsi que mes formations. N'hésitez pas à naviguer sur le site pour en savoir plus sur mes compétences et mon parcours.</p>
                     <div style="display: flex; gap: 10px; justify-content: center;">
                         <button class="contact-btn" onclick="openPopup()">Me contacter</button>
                         <button class="cv-btn" onclick="window.open('cv.pdf', '_blank')">Consulter le CV</button>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 </div>
@@ -313,15 +314,11 @@
         document.getElementById("popup").style.display = "none";
         document.getElementById("overlay").style.display = "none";
     }
-
-    // Affichage de la dernière mise à jour
-    const lastUpdated = new Date().toLocaleDateString('fr-FR');
-    const updateText = `Dernière mise à jour le ${lastUpdated}`;
-    const lastUpdateElement = document.createElement('div');
-    lastUpdateElement.classList.add('last-update');
-    lastUpdateElement.innerText = updateText;
-    document.body.appendChild(lastUpdateElement);
 </script>
+
+<div class="last-update">
+    Dernière mise à jour le : <script>document.write(new Date().toLocaleDateString());</script>
+</div>
 
 </body>
 </html>
