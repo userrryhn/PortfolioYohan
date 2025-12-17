@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
     <title>Apprenti - Portfolio de Yohan DO CAO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
         * {
@@ -19,13 +18,23 @@
             color: #333;
         }
 
+        /* HEADER */
         header {
             background-color: #0d6efd;
             color: white;
-            padding: 20px 10px;
+            padding: 30px 20px;
             text-align: center;
         }
 
+        header h1 {
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+        }
+
+        /* NAVIGATION COMPLETE */
         nav {
             background-color: #333;
             padding: 10px 0;
@@ -44,7 +53,7 @@
         }
 
         nav a:hover, .dropbtn:hover {
-            color: #FFFFFF;
+            color: #0d6efd;
         }
 
         .dropdown {
@@ -56,8 +65,8 @@
             display: none;
             position: absolute;
             background-color: #333;
-            min-width: 160px;
-            z-index: 1;
+            min-width: 180px;
+            z-index: 1000;
         }
 
         .dropdown-content a {
@@ -68,32 +77,29 @@
             font-size: 0.9rem;
         }
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
         .dropdown-content a:hover {
             background-color: #0d6efd;
         }
 
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* CONTAINER */
         .container {
-            padding: 40px 20px;
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
             display: flex;
-            justify-content: center;
-            align-items: center;
             flex-direction: column;
-            min-height: 70vh;
-            gap: 30px;
+            gap: 40px;
         }
 
         section {
             background-color: white;
             padding: 30px;
-            border-radius: 10px;
-            max-width: 900px;
-            width: 100%;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
         }
 
         h2 {
@@ -101,21 +107,90 @@
             margin-bottom: 20px;
         }
 
-        p {
-            margin-bottom: 15px;
-            font-size: 1rem;
+        /* INTRO */
+        .intro {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #666;
+            text-align: center;
+        }
+
+        .intro p {
+            font-size: 1.05rem;
             line-height: 1.6;
         }
 
-        .contact-box {
-            background-color: #f0f4ff;
-            padding: 20px;
-            border-radius: 8px;
+        /* CARDS */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
 
-        .contact-box p {
-            font-size: 1.05rem;
+        .card {
+            background-color: #f9f9ff;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .card h3 {
+            color: #0d6efd;
+            margin-bottom: 10px;
+        }
+
+        .card ul {
+            padding-left: 20px;
+        }
+
+        .card li {
+            margin-bottom: 8px;
+        }
+
+        /* MISSIONS */
+        .missions {
+            list-style: none;
+        }
+
+        .missions li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        /* CONTACT */
+        .contact {
+            text-align: center;
+            background-color: #f0f4ff;
+        }
+
+        .contact p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
             font-weight: bold;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .intro {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .photo {
+                margin: 0 auto;
+            }
         }
     </style>
 </head>
@@ -123,14 +198,13 @@
 <body>
 
 <header>
-    <h1>Portfolio de Yohan DO CAO</h1>
+    <h1>Yohan DO CAO</h1>
+    <p>BTS SIO SISR – Apprenti Technicien Support</p>
 </header>
 
+<!-- NAVIGATION CORRECTE -->
 <nav>
-    <!-- Présentation -->
-    <nav>
-    <!-- Présentation avec menu déroulant + lien cliquable -->
-        <a href="index.html">Accueil</a>
+    <a href="index.html">Accueil</a>
 
     <div class="dropdown">
         <a class="dropbtn">Présentation</a>
@@ -141,18 +215,16 @@
         </div>
     </div>
 
-    <!-- Épreuve E5 -->
     <div class="dropdown">
         <button class="dropbtn">Épreuve E5</button>
         <div class="dropdown-content">
             <a href="tableauSynthese.html">Tableau de synthèse</a>
-            <a href="missionFormation.html">Missions réalisées en formation</a>
-            <a href="missionEntreprise.html">Missions réalisées en entreprise</a>
+            <a href="missionFormation.html">Missions en formation</a>
+            <a href="missionEntreprise.html">Missions en entreprise</a>
             <a href="certifications.html">Certifications</a>
         </div>
     </div>
 
-    <!-- Épreuve E6 -->
     <div class="dropdown">
         <button class="dropbtn">Épreuve E6</button>
         <div class="dropdown-content">
@@ -163,60 +235,89 @@
 
     <a href="veille.html">Veille</a>
 </nav>
-</nav>
 
 <div class="container">
 
-    <!-- PRÉSENTATION -->
+    <!-- INTRO -->
+    <section class="intro">
+        <div class="photo">
+            Photo<br>à remplacer
+        </div>
+
+        <div>
+            <h2>À propos de moi</h2>
+            <p>
+                Je m'appelle <strong>Yohan DO CAO</strong>, j’ai <strong>19 ans</strong> et je suis actuellement 
+                étudiant en <strong>BTS SIO option SISR</strong> en <strong>2ᵉ année</strong> au 
+                <strong>Campus Montsouris à Paris</strong>.
+            </p>
+            <p>
+                Passionné par l’informatique, j’apprécie particulièrement 
+                <strong>la résolution de problèmes, les systèmes et les réseaux</strong>. 
+                Je suis sérieux, autonome et investi dans mon travail.
+            </p>
+        </div>
+    </section>
+
+    <!-- CARDS -->
     <section>
+        <div class="cards">
 
-        <h2>Présentation</h2>
+            <div class="card">
+                <h3>🎓 Formation</h3>
+                <ul>
+                    <li>BTS SIO SISR – 2ᵉ année</li>
+                    <li>Bac Pro SN option RISC</li>
+                </ul>
+            </div>
 
+            <div class="card">
+                <h3>💼 Alternance</h3>
+                <p>
+                    Technicien support informatique<br>
+                    <strong>Colas Digital Solutions</strong>
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🛠️ Compétences</h3>
+                <ul>
+                    <li>Support informatique</li>
+                    <li>Réseaux (bases)</li>
+                    <li>Windows / Linux</li>
+                    <li>VirtualBox</li>
+                    <li>HTML / CSS</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section>
+        <h2>Missions en entreprise</h2>
+        <ul class="missions">
+            <li>✔ Assistance aux utilisateurs</li>
+            <li>✔ Diagnostic et résolution d’incidents</li>
+            <li>✔ Installation et configuration de postes</li>
+            <li>✔ Maintenance du parc informatique</li>
+        </ul>
+    </section>
+
+    <!-- OBJECTIF -->
+    <section>
+        <h2>Projet professionnel</h2>
         <p>
-            Je m'appelle <strong>Yohan DO CAO</strong>, j’ai <strong>19 ans</strong> et je suis actuellement étudiant en 
-            <strong>BTS SIO option SISR (Solutions d’Infrastructure, Systèmes et Réseaux)</strong> en <strong>2ᵉ année</strong> au 
-            <strong>Campus Montsouris à Paris</strong>.
+            Mon projet professionnel est encore en construction, mais je souhaite 
+            <strong>poursuivre mes études jusqu’au Bachelor</strong>.
         </p>
-
-        <p>
-            Avant d’intégrer le BTS, j’ai obtenu un <strong>Bac Pro SN option C (RISC)</strong>, ce qui m’a permis d’acquérir 
-            de solides bases en informatique. Ce que j’apprécie particulièrement dans ce domaine, c’est 
-            <strong>la complexité des systèmes, la recherche de solutions et l’évolution constante des technologies</strong>.
-        </p>
-
-        <p>
-            Je suis actuellement en <strong>alternance chez Colas Digital Solutions</strong> en tant que 
-            <strong>technicien support informatique</strong>. Mes missions principales consistent à :
-            l’assistance aux utilisateurs, le diagnostic et la résolution des incidents, l’installation de postes, 
-            la configuration des logiciels ainsi que la maintenance du parc informatique.
-        </p>
-
-        <p>
-            Au cours de ma formation, j’ai développé différentes <strong>compétences techniques</strong> telles que :
-            le support informatique, les bases en <strong>réseaux</strong>, l’utilisation de 
-            <strong>machines virtuelles (VirtualBox)</strong>, l’administration systèmes sous 
-            <strong>Windows et Linux</strong>, ainsi que des notions en <strong>HTML / CSS</strong>.
-        </p>
-
-        <p>
-            Sur le plan personnel, je suis quelqu’un de <strong>sérieux</strong>, <strong>autonome</strong> et 
-            <strong>investi</strong> dans ce que j’entreprends. Mon projet professionnel est encore en construction, 
-            mais je souhaite <strong>poursuivre mes études jusqu’au Bachelor</strong> afin de continuer à monter en compétences 
-            et préciser mon orientation dans le domaine de l’informatique.
-        </p>
-
     </section>
 
     <!-- CONTACT -->
-    <section>
-
+    <section class="contact">
         <h2>Me contacter</h2>
-
-        <div class="contact-box">
-            <p>📞 Téléphone : 07 61 77 51 96</p>
-            <p>📧 Email : yohan.docao@gmail.com</p>
-        </div>
-
+        <p>📞 07 61 77 51 96</p>
+        <p>📧 yohan.docao@gmail.com</p>
     </section>
 
 </div>

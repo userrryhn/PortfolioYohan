@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Présentation - Portfolio de Yohan DO CAO</title>
+    <title>Accueil - Portfolio de Yohan DO CAO</title>
+
     <style>
         * {
             margin: 0;
@@ -18,13 +18,19 @@
             color: #333;
         }
 
+        /* HEADER */
         header {
             background-color: #0d6efd;
             color: white;
-            padding: 20px 10px;
+            padding: 25px 10px;
             text-align: center;
         }
 
+        header h1 {
+            font-size: 2rem;
+        }
+
+        /* NAVIGATION ORIGINALE */
         nav {
             background-color: #333;
             padding: 10px 0;
@@ -40,12 +46,10 @@
             background: none;
             border: none;
             cursor: pointer;
-            display: inline-block;
-            padding: 6px 10px;
         }
 
         nav a:hover, .dropbtn:hover {
-            color: #FFFFFF;
+            color: #0d6efd;
         }
 
         .dropdown {
@@ -58,7 +62,7 @@
             position: absolute;
             background-color: #333;
             min-width: 160px;
-            z-index: 1;
+            z-index: 1000;
         }
 
         .dropdown-content a {
@@ -66,7 +70,6 @@
             padding: 10px 15px;
             text-decoration: none;
             display: block;
-            font-size: 0.9rem;
         }
 
         .dropdown:hover .dropdown-content {
@@ -77,165 +80,65 @@
             background-color: #0d6efd;
         }
 
+        /* CONTAINER */
         .container {
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start; /* On remonte un peu le contenu */
-            flex-direction: column;
-            min-height: 70vh; /* Ajoute une hauteur minimum pour occuper un peu plus d'espace vertical */
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
         section {
-            margin-bottom: 30px;
-            width: 100%;
-            max-width: 800px;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            margin: 0 auto; /* Centrer horizontalement */
+            margin-bottom: 40px;
         }
 
-        .bubble-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            width: 100%;
-            justify-content: center;
-            align-items: center;
+        /* HERO */
+        .hero {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            text-align: center;
         }
 
-        .bubble-title {
-            font-size: 1.6rem;
-            font-weight: bold;
+        .hero h2 {
+            color: #0d6efd;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* INFO BOXES */
+        .info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .info-box {
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .info-box h3 {
             color: #0d6efd;
             margin-bottom: 10px;
-            text-align: center;
         }
 
-        .bubble {
-            background-color: white;
-            padding: 20px 30px;
-            max-width: 100%;
-            width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-            font-size: 1.2rem;
-            line-height: 1.5;
-            margin: 0 auto;
-            position: relative;
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.6rem;
+            }
         }
-
-        .bubble p {
-            font-size: 1rem;
-            color: #333;
-            margin-top: 10px;
-        }
-
-        .contact-btn, .cv-btn {
-            background-color: #0d6efd;
-            color: white;
-            padding: 8px 15px;
-            border: none;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 15px;
-            transition: background-color 0.3s ease;
-            width: auto;
-            font-size: 1rem;
-        }
-
-        .contact-btn:hover, .cv-btn:hover {
-            background-color: #0b5ed7;
-        }
-
-        .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 350px;
-            max-width: 90%;
-            z-index: 1000;
-        }
-
-        .popup h2 {
-            font-size: 1.6rem;
-            margin-bottom: 15px;
-            color: #0d6efd;
-            text-align: center;
-        }
-
-        .popup p {
-            font-size: 1.2rem;
-            color: #333;
-            text-align: center;
-            margin: 8px 0;
-        }
-
-        .popup a {
-            color: #0d6efd;
-            text-decoration: none;
-        }
-
-        .popup-close {
-            display: block;
-            margin-top: 15px;
-            text-align: center;
-            color: red;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-        }
-
-        .more-link {
-            position: absolute;
-            bottom: 10px;
-            right: 15px;
-            font-style: italic;
-            font-size: 0.9rem;
-            color: #0d6efd;
-            text-decoration: none;
-        }
-
-        .more-link:hover {
-            text-decoration: underline;
-        }
-
-        .last-update {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            font-size: 0.8rem;
-            color: #333;
-            font-style: italic;
-        }
-
     </style>
 </head>
+
 <body>
 
 <header>
@@ -243,8 +146,7 @@
 </header>
 
 <nav>
-    <!-- Présentation avec menu déroulant + lien cliquable -->
-        <a href="index.html">Accueil</a>
+    <a href="index.html">Accueil</a>
 
     <div class="dropdown">
         <a class="dropbtn">Présentation</a>
@@ -255,18 +157,16 @@
         </div>
     </div>
 
-    <!-- Épreuve E5 -->
     <div class="dropdown">
         <button class="dropbtn">Épreuve E5</button>
         <div class="dropdown-content">
             <a href="tableauSynthese.html">Tableau de synthèse</a>
-            <a href="missionFormation.html">Missions réalisées en formation</a>
-            <a href="missionEntreprise.html">Missions réalisées en entreprise</a>
+            <a href="missionFormation.html">Missions en formation</a>
+            <a href="missionEntreprise.html">Missions en entreprise</a>
             <a href="certifications.html">Certifications</a>
         </div>
     </div>
 
-    <!-- Épreuve E6 -->
     <div class="dropdown">
         <button class="dropbtn">Épreuve E6</button>
         <div class="dropdown-content">
@@ -279,46 +179,40 @@
 </nav>
 
 <div class="container">
-    <section>
-        <div class="bubble-container">
-            <div>
-                <div class="bubble-title">Bienvenue sur mon Portfolio !</div>
-                <div class="bubble">
-                    <p>Bienvenue sur mon portfolio. Ici, vous pourrez découvrir mes projets professionnels, mes expériences en entreprise ainsi que mes formations. N'hésitez pas à naviguer sur le site pour en savoir plus sur mes compétences et mon parcours.</p>
-                    <div style="display: flex; gap: 10px; justify-content: center;">
-                        <button class="contact-btn" onclick="openPopup()">Me contacter</button>
-                        <button class="cv-btn" onclick="window.open('cv.pdf', '_blank')">Consulter le CV</button>
-                    </div>
-                </div>
-            </div>
+
+    <section class="hero">
+        <h2>Bienvenue sur mon portfolio</h2>
+        <p>
+            Je m'appelle <strong>Yohan DO CAO</strong>, étudiant en 
+            <strong>BTS SIO option SISR</strong> en alternance.
+        </p>
+        <p>
+            Découvrez mon parcours, mes compétences et mes expériences professionnelles.
+        </p>
+    </section>
+
+    <section class="info">
+        <div class="info-box">
+            <h3>🎓 Formation</h3>
+            <p>BTS SIO SISR<br>Campus Montsouris</p>
+        </div>
+
+        <div class="info-box">
+            <h3>💼 Alternance</h3>
+            <p>Technicien support<br>Colas Digital Solutions</p>
+        </div>
+
+        <div class="info-box">
+            <h3>🛠️ Compétences</h3>
+            <p>Support • Réseaux • Systèmes</p>
+        </div>
+
+        <div class="info-box">
+            <h3>📂 Portfolio</h3>
+            <p>Épreuves E5 / E6<br>Projets BTS</p>
         </div>
     </section>
-</div>
 
-<!-- Popup Contact -->
-<div class="overlay" id="overlay"></div>
-<div class="popup" id="popup">
-    <h2>Me contacter</h2>
-    <p>N'hésitez pas à me contacter sur n'importe quel de ces moyens, j'y répondrai au plus vite</p>
-    <p>Email : <a href="mailto:yohan.docao@gmail.com?subject=Nouveau Message">yohan.docao@gmail.com</a></p>
-    <p>Téléphone : <a href="tel:+33617775196">07 61 77 51 96</a></p>
-    <span class="popup-close" onclick="closePopup()">Fermer</span>
-</div>
-
-<script>
-    function openPopup() {
-        document.getElementById("popup").style.display = "block";
-        document.getElementById("overlay").style.display = "block";
-    }
-
-    function closePopup() {
-        document.getElementById("popup").style.display = "none";
-        document.getElementById("overlay").style.display = "none";
-    }
-</script>
-
-<div class="last-update">
-    Dernière mise à jour le : <script>document.write(new Date().toLocaleDateString());</script>
 </div>
 
 </body>
