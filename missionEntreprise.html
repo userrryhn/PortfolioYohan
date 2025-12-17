@@ -1,326 +1,193 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Mission réalisée en entreprise - Portfolio de Yohan DO CAO</title>
+    
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <style>
-        /* Global Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* Reset global */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background-color: #f4f7fc; color: #333; }
 
-        /* Body and Fonts */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f7fc;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
+        /* Header inchangé */
+        header { background-color: #0d6efd; color: white; padding: 40px 20px; text-align: center; }
+        header h1 { font-size: 2.8rem; margin: 0; }
+        header p { font-size: 1.2rem; }
 
-        /* Header */
-        header {
-            background-color: #0d6efd;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
+        /* Navbar inchangé */
+        nav { background-color: #333; padding: 15px 0; text-align: center; }
+        nav a, .dropbtn { color: white; margin: 0 20px; text-decoration: none; font-weight: bold; cursor: pointer; }
+        nav a:hover, .dropdown-content a:hover { color: #FFFFFF; }
+        .dropdown { display: inline-block; position: relative; }
+        .dropbtn { background-color: #333; color: white; padding: 12px 20px; border: none; font-weight: bold; text-align: center; display: inline-block; }
+        .dropdown-content { display: none; position: absolute; background-color: #333; min-width: 160px; z-index: 1; }
+        .dropdown-content a { color: white; padding: 12px 20px; text-decoration: none; display: block; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-content a:hover { background-color: #0d6efd; color: white; }
 
-        header h1 {
-            font-size: 2.8rem;
-            margin: 0;
-        }
+        /* Container principal */
+        .container { padding: 30px 20px; display: flex; flex-direction: column; align-items: center; }
 
-        /* Navigation Bar */
-        nav {
-            background-color: #333;
-            padding: 15px 0;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 20px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: #FFFFFF;
-        }
-
-        .dropdown {
-            display: inline-block;
-            position: relative;
-        }
-
-        .dropbtn {
-            background-color: #333;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #333;
-            min-width: 160px;
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            color: white;
-            padding: 12px 20px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #0d6efd;
-        }
-
-        /* Main Container */
-        .container {
-            padding: 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        section {
-            margin-bottom: 50px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
+        /* Section titre */
         .section-title {
             font-size: 2rem;
             font-weight: bold;
             color: #0d6efd;
-            margin-bottom: 20px;
-            animation: fadeInUp 1s ease-out;
+            margin-bottom: 30px;
             text-align: center;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #0d6efd;
+            margin: 10px auto 0;
+            border-radius: 2px;
         }
 
-        .content {
-            background-color: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            animation: slideIn 0.6s ease-out;
-            line-height: 1.6;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: left;
-        }
-
-        .content ul {
-            margin-left: 20px;
-            list-style-type: disc;
-        }
-
-        .content ul li {
-            margin-bottom: 20px;
-        }
-
-        /* Contact Button */
-        .contact-btn {
-            background-color: #f0a500;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .contact-btn:hover {
-            background-color: #0d6efd;
-        }
-
-        /* Popup Modal */
-        .popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
+        /* Grille des missions */
+        .missions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
             width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            justify-content: center;
-            align-items: center;
+            max-width: 1200px;
         }
 
-        .popup-content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 600px;
-            text-align: center;
+        /* Cartes des missions */
+        .mission-card {
+            background-color: #ffffff;
+            padding: 25px 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .popup h2 {
-            font-size: 2rem;
+        .mission-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            background-color: #f0f7ff;
+        }
+
+        .mission-card h3 {
             color: #0d6efd;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .popup p {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-        }
+        .mission-card h3 i { color: #0d6efd; }
 
-        .popup a {
+        .mission-card p { font-size: 0.95rem; line-height: 1.5; }
+
+        .mission-card a {
             color: #0d6efd;
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s ease;
         }
 
-        .popup a:hover {
-            color: #f0a500;
-        }
+        .mission-card a:hover { color: #6610f2; text-decoration: underline; }
 
-        .popup .close-btn {
-            background-color: #f0a500;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
+        /* Popup Modal inchangé */
+        .popup { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); justify-content: center; align-items: center; }
+        .popup-content { background-color: white; padding: 20px; border-radius: 10px; width: 80%; max-width: 600px; text-align: center; }
+        .popup h2 { font-size: 2rem; color: #0d6efd; margin-bottom: 20px; }
+        .popup p { font-size: 1.1rem; margin-bottom: 15px; }
+        .popup a { color: #0d6efd; text-decoration: none; font-weight: bold; }
+        .popup a:hover { color: #f0a500; }
+        .popup .close-btn { background-color: #f0a500; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 20px; }
+        .popup .close-btn:hover { background-color: #0d6efd; }
 
-        .popup .close-btn:hover {
-            background-color: #0d6efd;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideIn {
-            0% {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Yohan DO CAO</h1>
+        <p>BTS SIO SISR – Apprenti Technicien Support</p>
+    </header>
 
-<header>
-    <h1>Yohan DO CAO</h1>
-    <p>BTS SIO SISR – Apprenti Technicien Support</p>
-</header>
-
-<!-- Navbar -->
-<nav>
-    <!-- Présentation avec menu déroulant + lien cliquable -->
+    <nav>
         <a href="index.html">Accueil</a>
+        <div class="dropdown">
+            <a class="dropbtn">Présentation</a>
+            <div class="dropdown-content">
+                <a href="apprenti.html">Apprenti</a>
+                <a href="entreprise.html">Entreprise</a>
+                <a href="colas.html">Mon service</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Épreuve E5</button>
+            <div class="dropdown-content">
+                <a href="tableauSynthese.html">Tableau de synthèse</a>
+                <a href="missionFormation.html">Missions réalisées en formation</a>
+                <a href="missionEntreprise.html">Missions réalisées en entreprise</a>
+                <a href="certifications.html">Certifications</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Épreuve E6</button>
+            <div class="dropdown-content">
+                <a href="situation.html">Situation</a>
+                <a href="production.html">Production</a>
+            </div>
+        </div>
+        <a href="veille.html">Veille</a>
+    </nav>
 
-    <div class="dropdown">
-        <a class="dropbtn">Présentation</a>
-        <div class="dropdown-content">
-            <a href="apprenti.html">Apprenti</a>
-            <a href="entreprise.html">Entreprise</a>
-            <a href="colas.html">Mon service</a>
+    <div class="container">
+        <section>
+            <h2 class="section-title">Missions réalisées en entreprise</h2>
+            <div class="missions-grid">
+                <div class="mission-card">
+                    <h3><i class="fas fa-network-wired"></i><a href="PBRes.pdf" target="_blank">Réglage de problèmes réseaux généraux</a></h3>
+                    <p>J'ai résolu plusieurs problèmes liés aux réseaux de l'entreprise, assurant ainsi une meilleure stabilité et performance des systèmes internes.</p>
+                </div>
+
+                <div class="mission-card">
+                    <h3><i class="fas fa-laptop-code"></i><a href="logiciel.pdf" target="_blank">Installation de logiciels Windows, iOS et Android</a></h3>
+                    <p>J'ai pris en charge l'installation et la configuration de divers logiciels sur des machines Windows et iOS pour améliorer l'efficacité des utilisateurs.</p>
+                </div>
+
+                <div class="mission-card">
+                    <h3><i class="fas fa-sync-alt"></i><a href="remasterisation.pdf" target="_blank">Remasterisation de systèmes Windows</a></h3>
+                    <p>J'ai effectué des remasterisations de systèmes, garantissant une mise à jour efficace des logiciels et des configurations système pour maintenir la sécurité et la performance des postes de travail.</p>
+                </div>
+
+                <div class="mission-card">
+                    <h3><i class="fas fa-server"></i>Installation d'un serveur membre</h3>
+                    <p>J'ai installé et configuré un serveur membre dans l'entreprise, ce qui a permis de renforcer la gestion des utilisateurs et l'accès aux ressources partagées.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="popup" id="contactPopup">
+        <div class="popup-content">
+            <h2>Contactez-moi</h2>
+            <p>N'hésitez pas à me contacter sur n'importe quel de ces moyens, j'y répondrai au plus vite ;)</p>
+            <p>Email : <a href="mailto:yohan.docao@gmail.com?subject=Nouveau Message">yohan.docao@gmail.com</a></p>
+            <p>Téléphone : <a href="tel:+33617775196">07 61 77 51 96</a></p>
+            <p>Adresse du campus: 2 Rue Lacaze, 75014 Paris</p>
+            <button class="close-btn" onclick="closePopup()">Fermer</button>
         </div>
     </div>
 
-    <!-- Épreuve E5 -->
-    <div class="dropdown">
-        <button class="dropbtn">Épreuve E5</button>
-        <div class="dropdown-content">
-            <a href="tableauSynthese.html">Tableau de synthèse</a>
-            <a href="missionFormation.html">Missions réalisées en formation</a>
-            <a href="missionEntreprise.html">Missions réalisées en entreprise</a>
-            <a href="certifications.html">Certifications</a>
-        </div>
-    </div>
-
-    <!-- Épreuve E6 -->
-    <div class="dropdown">
-        <button class="dropbtn">Épreuve E6</button>
-        <div class="dropdown-content">
-            <a href="situation.html">Situation</a>
-            <a href="production.html">Production</a>
-        </div>
-    </div>
-
-    <a href="veille.html">Veille</a>
-</nav>s
-
-<!-- Main Content -->
-<div class="container">
-    <section>
-        <h2 class="section-title">Missions réalisées en entreprise</h2>
-        <div class="content">
-            <p>Durant mon alternance chez COLAS DIGITAL SOLUTION, j'ai participé à plusieurs projets liés à la transformation numérique des entreprises. J'ai notamment contribué à la mise en place de solutions logicielles adaptées aux besoins spécifiques des clients, tout en respectant les exigences de sécurité et de performance. Ces missions m'ont permis de renforcer mes compétences techniques et ma capacité à travailler en équipe.</p>
-            
-            <h3>Quelques autres missions que j'ai réalisées :</h3>
-            <ul>
-                <li><a href="PBRes.pdf" target="_blank"><strong>Réglage de problèmes réseaux généraux</a> :</strong> J'ai résolu plusieurs problèmes liés aux réseaux de l'entreprise, assurant ainsi une meilleure stabilité et performance des systèmes internes.</li>
-                <li><a href="logiciel.pdf" target="_blank"><strong>Installation de logiciels Windows, iOS et Android</a> :</strong> J'ai pris en charge l'installation et la configuration de divers logiciels sur des machines Windows et iOS pour améliorer l'efficacité des utilisateurs.</li>
-                <li><a href="remasterisation.pdf" target="_blank"><strong>Remasterisation de systèmes Windows</a> :</strong> J'ai effectué des remasterisations de systèmes, garantissant une mise à jour efficace des logiciels et des configurations système pour maintenir la sécurité et la performance des postes de travail.</li>
-                <li><strong>Installation d'un serveur membre :</strong> J'ai installé et configuré un serveur membre dans l'entreprise, ce qui a permis de renforcer la gestion des utilisateurs et l'accès aux ressources partagées.</li>
-            </ul>
-            <p>Ces missions m'ont permis d'acquérir une expérience précieuse dans la gestion des réseaux, l'installation de logiciels et la configuration de serveurs, me préparant ainsi pour des défis plus complexes dans le domaine de l'informatique.</p>
-        </div>
-    </section>
-</div>
-
-<!-- Popup Modal -->
-<div class="popup" id="contactPopup">
-    <div class="popup-content">
-        <h2>Contactez-moi</h2>
-        <p>N'hésitez pas à me contacter sur n'importe quel de ces moyens, j'y répondrai au plus vite ;)</p>
-        <p>Email : <a href="mailto:yohan.docao@gmail.com?subject=Nouveau Message">yohan.docao@gmail.com</a></p>
-        <p>Téléphone : <a href="tel:+33617775196">07 61 77 51 96</a></p>
-        <p>Adresse du campus: 2 Rue Lacaze, 75014 Paris</p>
-        <button class="close-btn" onclick="closePopup()">Fermer</button>
-    </div>
-</div>
-
-<script>
-    // Fonction pour ouvrir la popup
-    function openPopup() {
-        document.getElementById("contactPopup").style.display = "flex";
-    }
-
-    // Fonction pour fermer la popup
-    function closePopup() {
-        document.getElementById("contactPopup").style.display = "none";
-    }
-</script>
-
+    <script>
+        function openPopup() { document.getElementById("contactPopup").style.display = "flex"; }
+        function closePopup() { document.getElementById("contactPopup").style.display = "none"; }
+    </script>
 </body>
 </html>
