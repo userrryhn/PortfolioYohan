@@ -116,16 +116,19 @@
         }
 
         .photo {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            background-color: #ddd;
+            width: 250px;        /* Taille fixe du cercle */
+            height: 250px;       /* Taille fixe du cercle */
+            border-radius: 50%;  /* Rendre le conteneur circulaire */
+            overflow: hidden;    /* Cacher tout débordement */
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #666;
-            text-align: center;
+            align-items: center; /* Centrer l'image verticalement */
+            justify-content: center; /* Centrer l'image horizontalement */
+        }
+
+        .photo img {
+            width: 100%;         /* L'image prendra toute la largeur du conteneur */
+            height: 100%;        /* L'image prendra toute la hauteur du conteneur */
+            object-fit: cover;   /* Recadrer l'image pour remplir le cercle sans déformer */
         }
 
         .intro p {
@@ -241,7 +244,8 @@
     <!-- INTRO -->
     <section class="intro">
         <div class="photo">
-            Photo<br>à remplacer
+            <!-- Photo de Yohan -->
+            <img src="yohanphoto.png" alt="Photo de Yohan DO CAO">
         </div>
 
         <div>
