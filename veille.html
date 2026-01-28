@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Veille Technologique - Intelligence Artificielle</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Veille - Portfolio de Yohan DO CAO</title>
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: Arial, sans-serif;
@@ -35,6 +36,7 @@
             background: none;
             border: none;
             cursor: pointer;
+            font-size: 1rem;
         }
 
         .dropdown {
@@ -46,7 +48,7 @@
             display: none;
             position: absolute;
             background-color: #333;
-            min-width: 200px;
+            min-width: 220px;
             top: 100%;
             left: 0;
             z-index: 1;
@@ -72,7 +74,7 @@
 
         section {
             width: 100%;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -96,13 +98,15 @@
         }
 
         .content img {
+            display: block;
+            max-width: 420px;
             width: 100%;
+            margin: 25px auto;
             border-radius: 10px;
-            margin: 20px 0;
         }
 
         ul {
-            margin-left: 20px;
+            margin-left: 25px;
             margin-top: 15px;
         }
 
@@ -124,6 +128,90 @@
 
         td {
             padding: 10px;
+            vertical-align: top;
+        }
+
+        /* ===== QUICK NAV RÉTRACTABLE ===== */
+
+        .quick-nav {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            padding: 10px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            width: 160px;
+            transition: width 0.3s ease;
+            overflow: hidden;
+        }
+
+        .quick-links {
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+            white-space: nowrap;
+            transition: opacity 0.2s ease;
+        }
+
+        .quick-links a {
+            position: relative;              /* AJOUT */
+            padding-left: 14px;              /* AJOUT */
+            text-decoration: none;
+            color: #0d6efd;
+            font-weight: bold;
+            margin: 8px 0;
+            font-size: 0.9rem;
+        }
+
+        /* ===== MICRO-POINT ===== */
+        .dot {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 4px;
+            background-color: #0d6efd;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .quick-links a.active .dot {
+            opacity: 1;
+        }
+        /* ===== FIN AJOUT ===== */
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            font-size: 0.9rem;
+            cursor: pointer;
+            color: #888;
+            transition: transform 0.3s ease;
+            padding: 5px;
+        }
+
+        .quick-nav.collapsed {
+            width: 36px;
+        }
+
+        .quick-nav.collapsed .quick-links {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .quick-nav.collapsed .toggle-btn {
+            transform: rotate(180deg);
+        }
+
+        @media (max-width: 1100px) {
+            .quick-nav { display: none; }
         }
     </style>
 </head>
@@ -137,175 +225,253 @@
 
 <nav>
     <a href="index.html">Accueil</a>
+
+    <div class="dropdown">
+        <a class="dropbtn">Présentation</a>
+        <div class="dropdown-content">
+            <a href="apprenti.html">Apprenti</a>
+            <a href="entreprise.html">Entreprise</a>
+            <a href="colas.html">Mon service</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn">Épreuve E5</button>
+        <div class="dropdown-content">
+            <a href="tableauSynthese.html">Tableau de synthèse</a>
+            <a href="missionFormation.html">Missions réalisées en formation</a>
+            <a href="missionEntreprise.html">Missions réalisées en entreprise</a>
+            <a href="certifications.html">Certifications</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn">Épreuve E6</button>
+        <div class="dropdown-content">
+            <a href="situation.html">Situation</a>
+            <a href="production.html">Production</a>
+        </div>
+    </div>
+
     <a href="veille.html">Veille</a>
 </nav>
 
+<!-- QUICK NAV -->
+<div class="quick-nav" id="quickNav">
+    <button class="toggle-btn" id="toggleBtn">&#9654;</button>
+    <div class="quick-links">
+        <a href="#intro" data-section="intro"><span class="dot"></span>Intro</a>
+        <a href="#si" data-section="si"><span class="dot"></span>SI</a>
+        <a href="#cyber" data-section="cyber"><span class="dot"></span>Cyber</a>
+        <a href="#donnees" data-section="donnees"><span class="dot"></span>Données</a>
+        <a href="#reglementation" data-section="reglementation"><span class="dot"></span>AI Act</a>
+        <a href="#tableau" data-section="tableau"><span class="dot"></span>Tableau</a>
+    </div>
+</div>
+
 <div class="container">
 
-    <!-- INTRO -->
-    <section>
-        <h2 class="section-title">Veille Technologique : Intelligence Artificielle</h2>
-        <div class="content">
-            <p>
-                Dans le cadre de mon BTS SIO option SISR, j’ai réalisé une veille technologique approfondie
-                sur l’intelligence artificielle (IA), ses évolutions récentes, ses usages en entreprise
-                ainsi que les risques associés aux systèmes informatiques et à la cybersécurité.
-            </p>
-            <p>
-                L’IA repose sur des algorithmes capables d’apprendre à partir de grandes quantités de données.
-                On distingue principalement le Machine Learning, le Deep Learning et plus récemment
-                l’IA générative, qui permet de produire du texte, des images ou du code.
-            </p>
+<section id="intro">
+    <h2 class="section-title">Veille Technologique : Intelligence Artificielle</h2>
+    <div class="content">
+        <p>
+            Dans le cadre de mon BTS SIO option SISR, cette veille technologique porte sur
+            l’intelligence artificielle et son évolution rapide. L’IA est aujourd’hui
+            un élément central de la transformation numérique des entreprises.
+        </p>
+        <p>
+            Elle est utilisée aussi bien pour automatiser des tâches que pour analyser
+            des données complexes, améliorer la sécurité et optimiser les systèmes
+            d’information.
+        </p>
+        <img src="images/ia.jpg" alt="Illustration de l'intelligence artificielle">
+    </div>
+</section>
 
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Artificial_Intelligence_%26_AI_%26_Machine_Learning_-_30212411048.jpg" alt="Intelligence Artificielle">
-        </div>
-    </section>
+<section id="si">
+    <h2 class="section-title">IA et Systèmes d’Information</h2>
+    <div class="content">
+        <p>
+            L’intelligence artificielle est intégrée aux systèmes d’information afin
+            d’automatiser la supervision, la maintenance et l’optimisation des
+            infrastructures informatiques.
+        </p>
+        <p>
+            Elle permet notamment l’analyse des performances des serveurs, la détection
+            d’anomalies réseau et l’anticipation des pannes, ce qui améliore la
+            disponibilité des services.
+        </p>
+        <p>
+            Pour un technicien SISR, ces outils représentent un gain de temps important,
+            mais nécessitent une surveillance humaine afin de conserver le contrôle
+            sur les décisions critiques.
+        </p>
+        <img src="images/datacenter.jpg" alt="Infrastructure informatique">
+    </div>
+</section>
 
-    <!-- IA & SI -->
-    <section>
-        <h2 class="section-title">IA et Systèmes d’Information</h2>
-        <div class="content">
-            <p>
-                Dans les systèmes d’information modernes, l’intelligence artificielle est utilisée
-                pour automatiser de nombreuses tâches auparavant réalisées manuellement par les
-                équipes informatiques.
-            </p>
+<section id="cyber">
+    <h2 class="section-title">IA et Cybersécurité</h2>
+    <div class="content">
+        <p>
+            En cybersécurité, l’IA joue un rôle clé dans la détection des menaces et
+            l’analyse des comportements suspects sur les réseaux.
+        </p>
+        <p>
+            Elle est utilisée dans les systèmes IDS/IPS, les SIEM et les solutions de
+            surveillance afin d’identifier rapidement les attaques et de limiter
+            leur impact.
+        </p>
+        <p>
+            Toutefois, les cybercriminels utilisent également l’IA pour automatiser
+            leurs attaques, ce qui oblige les entreprises à renforcer continuellement
+            leurs défenses.
+        </p>
+        <img src="images/cybersecurity.png" alt="Cybersécurité et intelligence artificielle">
+    </div>
+</section>
 
-            <ul>
-                <li>Supervision intelligente des réseaux et serveurs</li>
-                <li>Analyse prédictive des pannes matérielles</li>
-                <li>Automatisation du support utilisateur (chatbots)</li>
-                <li>Optimisation des performances des infrastructures</li>
-            </ul>
+<section id="donnees">
+    <h2 class="section-title">IA et Données Personnelles</h2>
+    <div class="content">
+        <p>
+            Les systèmes d’intelligence artificielle reposent sur l’exploitation de
+            grandes quantités de données, souvent personnelles ou sensibles.
+        </p>
+        <p>
+            Les entreprises doivent donc respecter le RGPD, notamment en matière de
+            sécurité des données, de limitation des accès et de transparence des
+            traitements automatisés.
+        </p>
+        <p>
+            Le technicien SISR joue un rôle essentiel dans la protection des bases de
+            données, la mise en place de sauvegardes et la gestion des droits d’accès.
+        </p>
+        <img src="images/rgpd.png" alt="Protection des données personnelles">
+    </div>
+</section>
 
-            <p>
-                Ces technologies permettent de réduire les temps d’arrêt, d’améliorer la disponibilité
-                des services et de diminuer les coûts d’exploitation. Cependant, une dépendance excessive
-                à l’automatisation peut poser problème en cas de défaillance des systèmes d’IA.
-            </p>
+<section id="reglementation">
+    <h2 class="section-title">Réglementation et AI Act</h2>
+    <div class="content">
+        <p>
+            L’AI Act est un règlement européen visant à encadrer l’utilisation de
+            l’intelligence artificielle selon le niveau de risque des systèmes utilisés.
+        </p>
+        <p>
+            Il classe les systèmes d’IA en plusieurs catégories allant des usages
+            interdits aux usages libres, en imposant des obligations strictes pour
+            les systèmes à haut risque.
+        </p>
+        <p>
+            Pour les entreprises, cela implique une analyse des risques, une
+            documentation technique et une responsabilité accrue en cas de
+            dysfonctionnement.
+        </p>
+        <img src="images/eu.png" alt="Union européenne et réglementation de l'IA">
+    </div>
+</section>
 
-            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Data_center.jpg" alt="Infrastructure informatique">
-        </div>
-    </section>
-
-    <!-- IA & CYBER -->
-    <section>
-        <h2 class="section-title">IA et Cybersécurité</h2>
-        <div class="content">
-            <p>
-                L’intelligence artificielle occupe aujourd’hui une place centrale dans le domaine
-                de la cybersécurité. Elle est utilisée à la fois pour renforcer les défenses et
-                pour mener des attaques plus sophistiquées.
-            </p>
-
-            <p><strong>Utilisation défensive :</strong></p>
-            <ul>
-                <li>Détection automatique des comportements anormaux</li>
-                <li>Analyse en temps réel des journaux système</li>
-                <li>Amélioration des IDS/IPS</li>
-            </ul>
-
-            <p><strong>Utilisation offensive :</strong></p>
-            <ul>
-                <li>Phishing généré par IA très réaliste</li>
-                <li>Automatisation des attaques</li>
-                <li>Création de malwares évolutifs</li>
-            </ul>
-
-            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Cybersecurity.png" alt="Cybersécurité et IA">
-        </div>
-    </section>
-
-    <!-- DONNÉES -->
-    <section>
-        <h2 class="section-title">IA et Données Personnelles</h2>
-        <div class="content">
-            <p>
-                Les systèmes d’IA nécessitent de grandes quantités de données pour fonctionner correctement.
-                Ces données sont souvent personnelles ou sensibles, ce qui pose des enjeux majeurs
-                en matière de protection de la vie privée.
-            </p>
-
-            <p>
-                Les entreprises doivent respecter le RGPD, notamment :
-            </p>
-
-            <ul>
-                <li>Principe de minimisation des données</li>
-                <li>Transparence des traitements automatisés</li>
-                <li>Sécurisation des bases de données</li>
-                <li>Droits des personnes concernées</li>
-            </ul>
-
-            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/GDPR_Logo.png" alt="RGPD">
-        </div>
-    </section>
-
-    <!-- REGLEMENTATION -->
-    <section>
-        <h2 class="section-title">Réglementation et AI Act</h2>
-        <div class="content">
-            <p>
-                L’Union européenne a mis en place l’AI Act afin de réguler l’usage de l’intelligence
-                artificielle selon une approche basée sur le niveau de risque.
-            </p>
-
-            <ul>
-                <li>Risque inacceptable : systèmes interdits</li>
-                <li>Haut risque : obligations strictes</li>
-                <li>Risque limité : obligations de transparence</li>
-                <li>Risque minimal : usage libre</li>
-            </ul>
-
-            <p>
-                Ce cadre réglementaire vise à protéger les citoyens tout en permettant
-                l’innovation technologique.
-            </p>
-
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/European_Union_flag.png" alt="Union Européenne">
-        </div>
-    </section>
-
-    <!-- TABLEAU -->
-    <section>
-        <h2 class="section-title">Tableau de Veille Technologique</h2>
-        <div class="content">
-            <table>
-                <tr>
-                    <th>Date</th>
-                    <th>Source</th>
-                    <th>Sujet</th>
-                    <th>Analyse</th>
-                </tr>
-                <tr>
-                    <td>Janvier 2025</td>
-                    <td>Coexya</td>
-                    <td>AI Act</td>
-                    <td>Encadrement légal de l’IA afin de limiter les dérives tout en sécurisant les usages professionnels.</td>
-                </tr>
-                <tr>
-                    <td>Février 2025</td>
-                    <td>CNIL</td>
-                    <td>IA & RGPD</td>
-                    <td>Rappel des obligations légales liées à la protection des données personnelles.</td>
-                </tr>
-                <tr>
-                    <td>Mars 2025</td>
-                    <td>ANSSI</td>
-                    <td>Cyberattaques</td>
-                    <td>Utilisation croissante de l’IA par les cybercriminels.</td>
-                </tr>
-                <tr>
-                    <td>Avril 2025</td>
-                    <td>Le Monde Informatique</td>
-                    <td>Automatisation</td>
-                    <td>Amélioration de la productivité mais dépendance accrue aux systèmes automatisés.</td>
-                </tr>
-            </table>
-        </div>
-    </section>
+<section id="tableau">
+    <h2 class="section-title">Tableau de Veille Technologique</h2>
+    <div class="content">
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Source</th>
+                <th>Sujet</th>
+                <th>Résumé</th>
+                <th>Enjeux / Impacts pour l'entreprise</th>
+                <th>Impact pour le métier SISR</th>
+            </tr>
+            <tr>
+                <td>Janvier 2025</td>
+                <td>Coexya</td>
+                <td>AI Act</td>
+                <td>Encadrement légal de l’IA en Europe.</td>
+                <td>Conformité obligatoire.</td>
+                <td>Sécurité et conformité des solutions.</td>
+            </tr>
+            <tr>
+                <td>Février 2025</td>
+                <td>CNIL</td>
+                <td>Données personnelles</td>
+                <td>Respect strict du RGPD.</td>
+                <td>Risques juridiques.</td>
+                <td>Sécurisation des données.</td>
+            </tr>
+            <tr>
+                <td>Mars 2025</td>
+                <td>ANSSI</td>
+                <td>Cyberattaques</td>
+                <td>Automatisation des attaques.</td>
+                <td>Renforcement de la sécurité.</td>
+                <td>Surveillance et gestion d’incidents.</td>
+            </tr>
+            <tr>
+                <td>Avril 2025</td>
+                <td>Le Monde Informatique</td>
+                <td>Automatisation</td>
+                <td>Déploiement d’outils IA.</td>
+                <td>Dépendance accrue.</td>
+                <td>Supervision humaine.</td>
+            </tr>
+            <tr>
+                <td>Mai 2025</td>
+                <td>Google Alerts</td>
+                <td>IA générative</td>
+                <td>Création automatique de contenu.</td>
+                <td>Fuite de données.</td>
+                <td>Contrôle des accès.</td>
+            </tr>
+            <tr>
+                <td>Juin 2025</td>
+                <td>ANSSI</td>
+                <td>Supervision intelligente</td>
+                <td>Analyse prédictive.</td>
+                <td>Haute disponibilité.</td>
+                <td>Analyse humaine des alertes.</td>
+            </tr>
+        </table>
+    </div>
+</section>
 
 </div>
+
+<script>
+    const toggleBtn = document.getElementById('toggleBtn');
+    const quickNav = document.getElementById('quickNav');
+
+    toggleBtn.addEventListener('click', () => {
+        quickNav.classList.toggle('collapsed');
+    });
+
+    /* ===== SCROLL-SPY MICRO-POINT ===== */
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".quick-links a");
+
+    function updateActiveSection() {
+        let current = "";
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 200;
+            if (window.scrollY >= sectionTop) {
+                current = section.id;
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.dataset.section === current) {
+                link.classList.add("active");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", updateActiveSection);
+    updateActiveSection();
+    /* ===== FIN AJOUT ===== */
+</script>
 
 </body>
 </html>
