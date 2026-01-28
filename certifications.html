@@ -131,12 +131,19 @@
             text-decoration: underline;
         }
 
-        /* PREVIEW CURSEUR */
+        /* PREVIEW CURSEUR – FLUIDE */
         .certif-preview {
             position: fixed;
             pointer-events: none;
-            display: none;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.15s ease-out, transform 0.15s ease-out;
             z-index: 9999;
+        }
+
+        .certif-preview.visible {
+            opacity: 1;
+            transform: scale(1);
         }
 
         .certif-preview img {
@@ -205,7 +212,7 @@
                 </li>
 
                 <li>
-                    <a href="MODULE1.pdf" target="_blank"
+                    <a href="rgpd-module1.pdf" target="_blank"
                        class="certif-link"
                        data-preview="rgpd-module1-preview.jpg">
                         Certification RGPD ET SES NOTIONS CLÉS 1
@@ -213,7 +220,7 @@
                 </li>
 
                 <li>
-                    <a href="MODULE2.pdf" target="_blank"
+                    <a href="rgpd-module2.pdf" target="_blank"
                        class="certif-link"
                        data-preview="rgpd-module2-preview.jpg">
                         Certification RGPD ET SES NOTIONS CLÉS 2
@@ -242,20 +249,22 @@
     const previewImg = preview.querySelector("img");
 
     document.querySelectorAll(".certif-link").forEach(link => {
+
         link.addEventListener("mouseenter", () => {
             previewImg.src = link.dataset.preview;
-            preview.style.display = "block";
+            preview.classList.add("visible");
         });
 
         link.addEventListener("mousemove", e => {
-            preview.style.left = e.clientX + 15 + "px";
-            preview.style.top = e.clientY + 15 + "px";
+            preview.style.left = e.clientX + 18 + "px";
+            preview.style.top = e.clientY + 18 + "px";
         });
 
         link.addEventListener("mouseleave", () => {
-            preview.style.display = "none";
+            preview.classList.remove("visible");
             previewImg.src = "";
         });
+
     });
 </script>
 
