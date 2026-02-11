@@ -6,23 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Situation - Portfolio de Yohan DO CAO</title>
     <style>
-        /* Global Reset */
+
+        /* RESET */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Body and Fonts */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f7fc;
             color: #333;
-            margin: 0;
-            padding: 0;
         }
 
-        /* Header */
         header {
             background-color: #0d6efd;
             color: white;
@@ -32,10 +29,9 @@
 
         header h1 {
             font-size: 2.8rem;
-            margin: 0;
         }
 
-        /* Navigation Bar */
+        /* NAVIGATION */
         nav {
             background-color: #333;
             padding: 15px 0;
@@ -43,7 +39,7 @@
             position: relative;
         }
 
-        nav a, nav .presentation-dropdown > a {
+        nav a, nav .dropbtn {
             color: white;
             margin: 0 20px;
             text-decoration: none;
@@ -52,72 +48,28 @@
             cursor: pointer;
             display: inline-block;
             padding: 12px 20px;
+            background-color: transparent;
+            border: none;
         }
 
-        nav a:hover, nav .presentation-dropdown > a:hover {
-            color: #FFFFFF;
-            background-color: #0d6efd;
-        }
-
-        /* Dropdown container for Présentation */
-        .presentation-dropdown {
-            display: inline-block;
-            position: relative;
-        }
-
-        /* Dropdown content for Présentation */
-        .presentation-dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #333;
-            min-width: 160px;
-            top: 100%;
-            left: 0;
-            z-index: 10;
-            border-radius: 0 0 5px 5px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-
-        .presentation-dropdown-content a {
-            color: white;
-            padding: 12px 20px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .presentation-dropdown-content a:hover {
+        nav a:hover, .dropbtn:hover {
             background-color: #0d6efd;
             color: white;
         }
 
-        /* Show dropdown on hover */
-        .presentation-dropdown:hover .presentation-dropdown-content {
-            display: block;
-        }
-
-        /* Dropdowns for E5 and E6 */
         .dropdown {
             display: inline-block;
             position: relative;
-        }
-
-        .dropbtn {
-            background-color: #333;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
         }
 
         .dropdown-content {
             display: none;
             position: absolute;
             background-color: #333;
-            min-width: 160px;
-            z-index: 1;
+            min-width: 200px;
             top: 100%;
             left: 0;
+            z-index: 10;
             border-radius: 0 0 5px 5px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
@@ -127,138 +79,53 @@
             padding: 12px 20px;
             text-decoration: none;
             display: block;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
+            margin: 0;
         }
 
         .dropdown-content a:hover {
             background-color: #0d6efd;
         }
 
-        /* Main Container */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* CONTENT */
         .container {
-            padding: 30px;
+            padding: 40px;
             display: flex;
             justify-content: center;
-            align-items: center;
-            flex-direction: column;
         }
 
         section {
-            margin-bottom: 50px;
             width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+            max-width: 1000px;
         }
 
         .section-title {
             font-size: 2rem;
-            font-weight: bold;
             color: #0d6efd;
-            margin-bottom: 20px;
-            animation: fadeInUp 1s ease-out;
+            margin-bottom: 30px;
             text-align: center;
         }
 
         .content {
             background-color: white;
-            padding: 25px;
+            padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            animation: slideIn 0.6s ease-out;
-            line-height: 1.6;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            line-height: 1.7;
         }
 
-        /* Contact Button */
-        .contact-btn {
-            background-color: #f0a500;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .contact-btn:hover {
-            background-color: #0d6efd;
-        }
-
-        /* Popup Modal */
-        .popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .popup-content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 600px;
-            text-align: center;
-        }
-
-        .popup h2 {
-            font-size: 2rem;
+        h3 {
+            margin-top: 35px;
             color: #0d6efd;
-            margin-bottom: 20px;
         }
 
-        .popup p {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
+        ul {
+            margin: 15px 0 15px 25px;
         }
 
-        .popup a {
-            color: #0d6efd;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .popup a:hover {
-            color: #f0a500;
-        }
-
-        .popup .close-btn {
-            background-color: #f0a500;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-
-        .popup .close-btn:hover {
-            background-color: #0d6efd;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(30px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes slideIn {
-            0% { opacity: 0; transform: translateX(-50px); }
-            100% { opacity: 1; transform: translateX(0); }
-        }
     </style>
 </head>
 <body>
@@ -268,10 +135,8 @@
     <p>BTS SIO SISR – Apprenti Technicien Support</p>
 </header>
 
-<!-- Navbar -->
 <nav>
-    <!-- Présentation avec menu déroulant + lien cliquable -->
-        <a href="index.html">Accueil</a>
+    <a href="index.html">Accueil</a>
 
     <div class="dropdown">
         <a class="dropbtn">Présentation</a>
@@ -282,7 +147,6 @@
         </div>
     </div>
 
-    <!-- Épreuve E5 -->
     <div class="dropdown">
         <button class="dropbtn">Épreuve E5</button>
         <div class="dropdown-content">
@@ -293,7 +157,6 @@
         </div>
     </div>
 
-    <!-- Épreuve E6 -->
     <div class="dropdown">
         <button class="dropbtn">Épreuve E6</button>
         <div class="dropdown-content">
@@ -305,36 +168,78 @@
     <a href="veille.html">Veille</a>
 </nav>
 
-<!-- Main Content -->
 <div class="container">
-    <section>
-        <h2 class="section-title">Situation</h2>
-        <div class="content">
-            <p>La situation décrite ici est une analyse approfondie d'un problème rencontré lors de mon parcours en BTS SIO. Cette situation m'a permis de démontrer ma capacité à résoudre des problèmes complexes en utilisant mes compétences en informatique et en gestion de projet. J'ai su prendre en compte les contraintes techniques et les besoins de l'entreprise pour proposer des solutions adaptées et efficaces.</p>
-        </div>
-    </section>
-</div>
+<section>
+<h2 class="section-title">Situation Professionnelle – Projet BELLETABLE</h2>
 
-<!-- Popup Modal -->
-<div class="popup" id="contactPopup">
-    <div class="popup-content">
-        <h2>Contactez-moi</h2>
-        <p>N'hésitez pas à me contacter sur n'importe quel de ces moyens, j'y répondrai au plus vite ;)</p>
-        <p>Email : <a href="mailto:yohan.docao@gmail.com?subject=Nouveau Message">yohan.docao@gmail.com</a></p>
-        <p>Téléphone : <a href="tel:+33617775196">07 61 77 51 96</a></p>
-        <p>Adresse du campus: 2 Rue Lacaze, 75014 Paris</p>
-        <button class="close-btn" onclick="closePopup()">Fermer</button>
-    </div>
-</div>
+<div class="content">
 
-<script>
-    function openPopup() {
-        document.getElementById("contactPopup").style.display = "flex";
-    }
-    function closePopup() {
-        document.getElementById("contactPopup").style.display = "none";
-    }
-</script>
+<h3>1. Contexte</h3>
+<p>
+Dans le cadre de ma formation en BTS SIO option SISR, j’ai réalisé le projet BELLETABLE.
+L’objectif était de concevoir et déployer une solution complète de gestion de parc informatique
+permettant le suivi du matériel, des utilisateurs, des tickets d’incidents et des consommables.
+</p>
+
+<p>
+Le projet a été réalisé dans un environnement virtualisé via Proxmox.
+Une machine virtuelle Debian 12 a été déployée afin d’héberger GLPI,
+outil open-source de gestion de parc informatique.
+</p>
+
+<h3>2. Architecture technique mise en place</h3>
+<ul>
+<li>Hyperviseur : Proxmox VE</li>
+<li>Système serveur : Debian 12</li>
+<li>Serveur Web : Apache2</li>
+<li>Base de données : MariaDB</li>
+<li>Langage supporté : PHP</li>
+<li>Application : GLPI</li>
+<li>Authentification : LDAP</li>
+</ul>
+
+<h3>3. Installation et configuration</h3>
+<ul>
+<li>Installation Apache : apt install apache2</li>
+<li>Installation MariaDB : apt install mariadb-server</li>
+<li>Installation PHP et modules requis</li>
+<li>Création base de données sécurisée</li>
+<li>Configuration droits SQL</li>
+<li>Déploiement GLPI dans /var/www/html</li>
+</ul>
+
+<h3>4. Configuration LDAP</h3>
+<p>
+Mise en place de l’authentification centralisée via LDAP.
+Un problème de bind a été identifié puis corrigé après analyse
+des paramètres DN et identifiants.
+</p>
+
+<h3>5. Gestion des profils</h3>
+<ul>
+<li>Administrateur</li>
+<li>Technicien</li>
+<li>Utilisateur</li>
+<li>Observateur</li>
+</ul>
+
+<h3>6. Résultats</h3>
+<ul>
+<li>GLPI opérationnel</li>
+<li>LDAP fonctionnel</li>
+<li>Système de tickets validé</li>
+<li>Gestion complète du parc</li>
+</ul>
+
+<h3>7. Analyse personnelle</h3>
+<p>
+Ce projet m’a permis de consolider mes compétences en administration système,
+virtualisation et gestion d’infrastructure.
+</p>
+
+</div>
+</section>
+</div>
 
 </body>
 </html>

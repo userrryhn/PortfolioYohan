@@ -13,16 +13,12 @@
             box-sizing: border-box;
         }
 
-        /* Body and Fonts */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f7fc;
             color: #333;
-            margin: 0;
-            padding: 0;
         }
 
-        /* Header */
         header {
             background-color: #0d6efd;
             color: white;
@@ -32,10 +28,8 @@
 
         header h1 {
             font-size: 2.8rem;
-            margin: 0;
         }
 
-        /* Navigation Bar */
         nav {
             background-color: #333;
             padding: 15px 0;
@@ -57,14 +51,20 @@
             color: #FFFFFF;
         }
 
-        /* Présentation dropdown wrapper */
-        .dropdown-presentation {
+        .dropdown {
             display: inline-block;
             position: relative;
-            margin: 0 20px;
         }
 
-        /* Dropdown content */
+        .dropbtn {
+            background-color: #333;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
         .dropdown-content {
             display: none;
             position: absolute;
@@ -88,35 +88,10 @@
             background-color: #0d6efd;
         }
 
-        /* Show dropdown on hover */
-        .dropdown-presentation:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Existing dropdowns for E5 and E6 */
-        .dropdown {
-            display: inline-block;
-            position: relative;
-        }
-
-        .dropbtn {
-            background-color: #333;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .dropdown-content {
-            /* Already defined above */
-        }
-
         .dropdown:hover .dropdown-content {
             display: block;
         }
 
-        /* Main Container */
         .container {
             padding: 30px;
             display: flex;
@@ -139,104 +114,79 @@
             font-weight: bold;
             color: #0d6efd;
             margin-bottom: 20px;
-            animation: fadeInUp 1s ease-out;
             text-align: center;
         }
 
         .content {
             background-color: white;
-            padding: 25px;
+            padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            animation: slideIn 0.6s ease-out;
-            line-height: 1.6;
-            max-width: 900px;
+            line-height: 1.7;
+            max-width: 1100px;
             margin: 0 auto;
-            text-align: center;
+            text-align: left;
         }
 
-        /* Contact Button */
-        .contact-btn {
-            background-color: #f0a500;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+        h3 {
+            color: #0d6efd;
+            margin-top: 30px;
         }
 
-        .contact-btn:hover {
-            background-color: #0d6efd;
+        ul {
+            margin: 15px 0 15px 25px;
         }
 
-        /* Popup Modal */
-        .popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
+        /* Point 3: texte à gauche + image à droite */
+        .bdd-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            margin-top: 30px;
+        }
+
+        .bdd-left {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .bdd-left h3 {
+            margin-top: 0;
+            margin-bottom: 14px;
+            color: #0d6efd;
+        }
+
+        .bdd-left p {
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        .bdd-right {
+            flex: 0 0 420px;
+        }
+
+        .bdd-right img {
             width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .popup-content {
-            background-color: white;
-            padding: 20px;
+            height: auto;
+            display: block;
             border-radius: 10px;
-            width: 80%;
-            max-width: 600px;
-            text-align: center;
+            border: 1px solid #ddd;
         }
 
-        .popup h2 {
-            font-size: 2rem;
-            color: #0d6efd;
-            margin-bottom: 20px;
-        }
+        @media (max-width: 900px) {
+            .bdd-row {
+                flex-direction: column;
+            }
 
-        .popup p {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-        }
+            .bdd-left {
+                border-right: none;
+                padding-right: 0;
+            }
 
-        .popup a {
-            color: #0d6efd;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .popup a:hover {
-            color: #f0a500;
-        }
-
-        .popup .close-btn {
-            background-color: #f0a500;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-
-        .popup .close-btn:hover {
-            background-color: #0d6efd;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(30px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes slideIn {
-            0% { opacity: 0; transform: translateX(-50px); }
-            100% { opacity: 1; transform: translateX(0); }
+            .bdd-right {
+                flex: 1;
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -247,10 +197,8 @@
     <p>BTS SIO SISR – Apprenti Technicien Support</p>
 </header>
 
-<!-- Navbar -->
 <nav>
-    <!-- Présentation avec menu déroulant + lien cliquable -->
-        <a href="index.html">Accueil</a>
+    <a href="index.html">Accueil</a>
 
     <div class="dropdown">
         <a class="dropbtn">Présentation</a>
@@ -261,7 +209,6 @@
         </div>
     </div>
 
-    <!-- Épreuve E5 -->
     <div class="dropdown">
         <button class="dropbtn">Épreuve E5</button>
         <div class="dropdown-content">
@@ -272,7 +219,6 @@
         </div>
     </div>
 
-    <!-- Épreuve E6 -->
     <div class="dropdown">
         <button class="dropbtn">Épreuve E6</button>
         <div class="dropdown-content">
@@ -284,39 +230,98 @@
     <a href="veille.html">Veille</a>
 </nav>
 
-<!-- Main Content -->
 <div class="container">
-    <section>
-        <h2 class="section-title">Production</h2>
-        <div class="content">
-            <p>La page de production présente le travail que j'ai réalisé dans le cadre de ma formation et de mon alternance. Elle montre mes capacités à produire des solutions informatiques en répondant aux besoins spécifiques de l'entreprise. La production peut comprendre des projets, des développements, ou des systèmes informatiques que j'ai mis en place, en tenant compte des objectifs et des contraintes.</p>
-        </div>
-    </section>
-</div>
+<section>
+<h2 class="section-title">Production – Projet BELLETABLE</h2>
 
-<!-- Popup Modal -->
-<div class="popup" id="contactPopup">
-    <div class="popup-content">
-        <h2>Contactez-moi</h2>
-        <p>N'hésitez pas à me contacter sur n'importe quel de ces moyens, j'y répondrai au plus vite ;)</p>
-        <p>Email : <a href="mailto:yohan.docao@gmail.com?subject=Nouveau Message">yohan.docao@gmail.com</a></p>
-        <p>Téléphone : <a href="tel:+33617775196">07 61 77 51 96</a></p>
-        <p>Adresse du campus: 2 Rue Lacaze, 75014 Paris</p>
-        <button class="close-btn" onclick="closePopup()">Fermer</button>
+<div class="content">
+
+<h3>1. Présentation de la production</h3>
+<p>
+La production réalisée dans le cadre du projet BELLETABLE consiste au déploiement complet
+d’une solution de gestion de parc informatique basée sur GLPI.
+L’objectif était de fournir une infrastructure fonctionnelle, sécurisée et administrable.
+</p>
+
+<h3>2. Infrastructure mise en place</h3>
+<ul>
+    <li><a href="https://www.proxmox.com/en/downloads/proxmox-virtual-environment/iso" target="_blank" rel="noopener noreferrer">Création d’une machine virtuelle sous Proxmox</a></li>
+    <li><a href="https://www.debian.org/distrib/" target="_blank" rel="noopener noreferrer">Installation de Debian 12</a></li>
+    <li><a href="https://wiki.debian.org/NetworkConfiguration" target="_blank" rel="noopener noreferrer">Configuration réseau (IP statique)</a></li>
+    <li><a href="https://httpd.apache.org/download.cgi" target="_blank" rel="noopener noreferrer">Installation Apache2</a></li>
+    <li><a href="https://mariadb.org/download/" target="_blank" rel="noopener noreferrer">Installation MariaDB</a></li>
+    <li><a href="https://www.php.net/downloads.php" target="_blank" rel="noopener noreferrer">Installation PHP et modules nécessaires</a></li>
+    <li><a href="https://glpi-project.org/downloads/" target="_blank" rel="noopener noreferrer">Déploiement et configuration de GLPI</a></li>
+</ul>
+
+<div class="bdd-row">
+    <div class="bdd-left">
+        <h3>3. Configuration base de données</h3>
+        <p>
+            Création d’une base de données dédiée à GLPI.
+            Configuration d’un utilisateur SQL sécurisé avec droits restreints.
+            Sécurisation via mysql_secure_installation.
+        </p>
+    </div>
+
+    <div class="bdd-right">
+        <img src="bdd.png" alt="Capture configuration base de données">
     </div>
 </div>
 
-<script>
-    // Fonction pour ouvrir la popup
-    function openPopup() {
-        document.getElementById("contactPopup").style.display = "flex";
-    }
+<h3>4. Paramétrage fonctionnel dans GLPI</h3>
+<ul>
+<li>Création des entités</li>
+<li>Création des profils utilisateurs</li>
+<li>Paramétrage des droits d’accès</li>
+<li>Configuration du système de tickets</li>
+<li>Ajout des catégories d’incidents</li>
+</ul>
 
-    // Fonction pour fermer la popup
-    function closePopup() {
-        document.getElementById("contactPopup").style.display = "none";
-    }
-</script>
+<h3>5. Intégration LDAP</h3>
+<p>
+Mise en place d’une authentification centralisée via LDAP.
+Configuration du DN, du serveur LDAP et des filtres utilisateurs.
+Tests de connexion et correction d’erreurs de bind.
+</p>
+
+<h3>6. Gestion du parc</h3>
+<ul>
+<li>Ajout des postes de travail</li>
+<li>Ajout des serveurs</li>
+<li>Ajout des équipements réseau</li>
+<li>Gestion des consommables</li>
+<li>Attribution des équipements aux utilisateurs</li>
+</ul>
+
+<h3>7. Sécurisation et sauvegarde</h3>
+<p>
+Réalisation d’un dump de la base MariaDB via mysqldump.
+Sauvegarde du fichier glpi_backup.sql.
+Vérification de l’intégrité des données.
+</p>
+
+<h3>8. Résultat final</h3>
+<p>
+L’environnement est entièrement fonctionnel.
+Les utilisateurs peuvent se connecter via LDAP,
+ouvrir des tickets et consulter le parc informatique.
+La solution répond aux besoins de gestion et de suivi.
+</p>
+
+<h3>9. Compétences mobilisées</h3>
+<ul>
+<li>Administration système Linux</li>
+<li>Virtualisation</li>
+<li>Gestion base de données</li>
+<li>Configuration réseau</li>
+<li>Gestion des droits utilisateurs</li>
+<li>Diagnostic et résolution d’incidents</li>
+</ul>
+
+</div>
+</section>
+</div>
 
 </body>
 </html>
