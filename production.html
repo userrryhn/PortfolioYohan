@@ -173,6 +173,36 @@
             border: 1px solid #ddd;
         }
 
+        /* Point 6: texte à gauche + image à droite */
+        .parc-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            margin-top: 30px;
+        }
+
+        .parc-left {
+            flex: 1;
+        }
+
+        .parc-left h3 {
+            margin-top: 0;
+            margin-bottom: 14px;
+            color: #0d6efd;
+        }
+
+        .parc-right {
+            flex: 0 0 420px;
+        }
+
+        .parc-right img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+        }
+
         @media (max-width: 900px) {
             .bdd-row {
                 flex-direction: column;
@@ -184,6 +214,15 @@
             }
 
             .bdd-right {
+                flex: 1;
+                width: 100%;
+            }
+
+            .parc-row {
+                flex-direction: column;
+            }
+
+            .parc-right {
                 flex: 1;
                 width: 100%;
             }
@@ -285,14 +324,22 @@ Configuration du DN, du serveur LDAP et des filtres utilisateurs.
 Tests de connexion et correction d’erreurs de bind.
 </p>
 
-<h3>6. Gestion du parc</h3>
-<ul>
-<li>Ajout des postes de travail</li>
-<li>Ajout des serveurs</li>
-<li>Ajout des équipements réseau</li>
-<li>Gestion des consommables</li>
-<li>Attribution des équipements aux utilisateurs</li>
-</ul>
+<div class="parc-row">
+    <div class="parc-left">
+        <h3>6. Gestion du parc</h3>
+        <ul>
+            <li>Ajout des postes de travail</li>
+            <li>Ajout des serveurs</li>
+            <li>Ajout des équipements réseau</li>
+            <li>Gestion des consommables</li>
+            <li>Attribution des équipements aux utilisateurs</li>
+        </ul>
+    </div>
+
+    <div class="parc-right">
+        <img src="parc.png" alt="Capture gestion du parc">
+    </div>
+</div>
 
 <h3>7. Sécurisation et sauvegarde</h3>
 <p>
@@ -325,3 +372,4 @@ La solution répond aux besoins de gestion et de suivi.
 
 </body>
 </html>
+```
