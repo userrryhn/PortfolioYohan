@@ -1,209 +1,23 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - Portfolio de Yohan DO CAO</title>
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css"><title>Accueil - Portfolio de Yohan DO CAO</title></head><body>
+<nav><div class="nav-inner">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f7fc;
-            color: #333;
-        }
-
-        /* HEADER — IDENTIQUE À LA PAGE VEILLE */
-        header {
-            background-color: #0d6efd;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        /* NAVIGATION ORIGINALE */
-        nav {
-            background-color: #333;
-            padding: 10px 0;
-            text-align: center;
-        }
-
-        nav a, .dropbtn {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9rem;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        nav a:hover, .dropbtn:hover {
-            color: #0d6efd;
-        }
-
-        .dropdown {
-            display: inline-block;
-            position: relative;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #333;
-            min-width: 160px;
-            z-index: 1000;
-        }
-
-        .dropdown-content a {
-            color: white;
-            padding: 10px 15px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #0d6efd;
-        }
-
-        /* CONTAINER */
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        section {
-            margin-bottom: 40px;
-        }
-
-        /* HERO */
-        .hero {
-            background-color: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-            text-align: center;
-        }
-
-        .hero h2 {
-            color: #0d6efd;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        /* INFO BOXES */
-        .info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .info-box {
-            background-color: white;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-            text-align: center;
-        }
-
-        .info-box h3 {
-            color: #0d6efd;
-            margin-bottom: 10px;
-        }
-    </style>
-</head>
-
-<body>
-
-<header>
-    <h1>Yohan DO CAO</h1>
-    <p>BTS SIO SISR – Apprenti Technicien Support</p>
-</header>
-
-<nav>
-    <a href="index.html">Accueil</a>
-
-    <div class="dropdown">
-        <a class="dropbtn">Présentation</a>
-        <div class="dropdown-content">
-            <a href="apprenti.html">Apprenti</a>
-            <a href="entreprise.html">Entreprise</a>
-            <a href="colas.html">Mon service</a>
-        </div>
-    </div>
-
-    <div class="dropdown">
-        <button class="dropbtn">Épreuve E5</button>
-        <div class="dropdown-content">
-            <a href="tableauSynthese.html">Tableau de synthèse</a>
-            <a href="missionFormation.html">Missions en formation</a>
-            <a href="missionEntreprise.html">Missions en entreprise</a>
-            <a href="certifications.html">Certifications</a>
-        </div>
-    </div>
-
-    <div class="dropdown">
-        <button class="dropbtn">Épreuve E6</button>
-        <div class="dropdown-content">
-            <a href="situation.html">Situation</a>
-            <a href="production.html">Production</a>
-        </div>
-    </div>
-
-    <a href="veille.html">Veille</a>
-</nav>
-
-<div class="container">
-
-    <section class="hero">
-        <h2>Bienvenue sur mon portfolio</h2>
-        <p>
-            Je m'appelle <strong>Yohan DO CAO</strong>, étudiant en 
-            <strong>BTS SIO option SISR</strong> en alternance.
-        </p>
-        <p>
-            Découvrez mon parcours, mes compétences et mes expériences professionnelles.
-        </p>
-    </section>
-
-    <section class="info">
-        <div class="info-box">
-            <h3>🎓 Formation</h3>
-            <p>BTS SIO SISR<br>Campus Montsouris</p>
-        </div>
-
-        <div class="info-box">
-            <h3>💼 Alternance</h3>
-            <p>Technicien support<br>Colas Digital Solutions</p>
-        </div>
-
-        <div class="info-box">
-            <h3>🛠️ Compétences</h3>
-            <p>Support • Réseaux • Systèmes</p>
-        </div>
-
-        <div class="info-box">
-            <h3>📂 Portfolio</h3>
-            <p>Épreuves E5 / E6<br>Projets BTS</p>
-        </div>
-    </section>
-
+<a href="index.html">Accueil</a>
+<div class="dropdown"><span class="dropbtn">Présentation</span><div class="dropdown-content"><a href="apprenti.html">Apprenti</a><a href="entreprise.html">Entreprise</a><a href="colas.html">Mon service</a></div></div>
+<div class="dropdown"><span class="dropbtn">Épreuve E5</span><div class="dropdown-content"><a href="tableauSynthese.html">Tableau de synthèse</a><a href="missionFormation.html">Missions réalisées en formation</a><a href="missionEntreprise.html">Missions réalisées en entreprise</a><a href="certifications.html">Certifications</a></div></div>
+<div class="dropdown"><span class="dropbtn">Épreuve E6</span><div class="dropdown-content"><a href="situation.html">Situation</a><a href="production.html">Production</a></div></div>
+<a href="veille.html">Veille</a>
+</div></nav>
+<div class="hero">
+<h1>Étudiant BTS SIO.<br><span>Apprenti chez Colas Digital Solutions.</span></h1>
+<p class="hero-sub">Je m'appelle Yohan DO CAO. Passionné d'informatique, je me forme en administration réseau, systèmes et support.</p>
 </div>
-
-</body>
-</html>
+<div class="sep"></div>
+<div class="container">
+<div class="grid-2">
+<div class="card"><h3>🎓 Formation</h3><p>BTS SIO SISR<br>Campus Montsouris</p></div>
+<div class="card"><h3>💼 Alternance</h3><p>Technicien support<br><strong>Colas Digital Solutions</strong></p></div>
+<div class="card"><h3>🛠️ Compétences</h3><p>Support • Réseaux • Systèmes</p></div>
+<div class="card"><h3>📂 Portfolio</h3><p>Épreuves E5 / E6<br>Projets BTS</p></div>
+</div>
+</div>
+<footer><p>© 2026 Yohan DO CAO — Portfolio BTS SIO</p></footer></body></html>

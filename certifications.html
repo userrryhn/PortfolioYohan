@@ -1,272 +1,35 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Certifications - Portfolio de Yohan DO CAO</title>
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css"><title>Certifications - Portfolio de Yohan DO CAO</title></head><body>
+<nav><div class="nav-inner">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f7fc;
-            color: #333;
-        }
-
-        /* HEADER */
-        header {
-            background-color: #0d6efd;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2.8rem;
-        }
-
-        /* NAV */
-        nav {
-            background-color: #333;
-            padding: 15px 0;
-            text-align: center;
-        }
-
-        nav a, .dropbtn {
-            color: white;
-            margin: 0 20px;
-            text-decoration: none;
-            font-weight: bold;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .dropdown {
-            display: inline-block;
-            position: relative;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #333;
-            min-width: 160px;
-            top: 100%;
-            left: 0;
-            z-index: 10;
-        }
-
-        .dropdown-content a {
-            display: block;
-            padding: 12px 20px;
-            color: white;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #0d6efd;
-        }
-
-        /* CONTAINER */
-        .container {
-            padding: 30px;
-            display: flex;
-            justify-content: center;
-        }
-
-        section {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #0d6efd;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .content {
-            background-color: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            max-width: 900px;
-            width: 100%;
-            text-align: center;
-        }
-
-        ul {
-            list-style: none;
-            margin-top: 15px;
-            margin-bottom: 15px;
-        }
-
-        li {
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-
-        /* CERTIFS */
-        .certif-link {
-            color: #0d6efd;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .certif-link:hover {
-            text-decoration: underline;
-        }
-
-        /* PREVIEW CURSEUR – FLUIDE */
-        .certif-preview {
-            position: fixed;
-            pointer-events: none;
-            opacity: 0;
-            transform: scale(0.95);
-            transition: opacity 0.15s ease-out, transform 0.15s ease-out;
-            z-index: 9999;
-        }
-
-        .certif-preview.visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .certif-preview img {
-            width: 220px;
-            border-radius: 10px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-            background: white;
-        }
-    </style>
-</head>
-
-<body>
-
-<header>
-    <h1>Yohan DO CAO</h1>
-    <p>BTS SIO SISR – Apprenti Technicien Support</p>
-</header>
-
-<nav>
-    <a href="index.html">Accueil</a>
-
-    <div class="dropdown">
-        <span class="dropbtn">Présentation</span>
-        <div class="dropdown-content">
-            <a href="apprenti.html">Apprenti</a>
-            <a href="entreprise.html">Entreprise</a>
-            <a href="colas.html">Mon service</a>
-        </div>
-    </div>
-
-    <div class="dropdown">
-        <span class="dropbtn">Épreuve E5</span>
-        <div class="dropdown-content">
-            <a href="tableauSynthese.html">Tableau de synthèse</a>
-            <a href="missionFormation.html">Missions formation</a>
-            <a href="missionEntreprise.html">Missions entreprise</a>
-            <a href="certifications.html">Certifications</a>
-        </div>
-    </div>
-
-    <div class="dropdown">
-        <span class="dropbtn">Épreuve E6</span>
-        <div class="dropdown-content">
-            <a href="situation.html">Situation</a>
-            <a href="production.html">Production</a>
-        </div>
-    </div>
-
-    <a href="veille.html">Veille</a>
-</nav>
-
-<div class="container">
-    <section>
-        <h2 class="section-title">Certifications</h2>
-
-        <div class="content">
-            <p>Voici une liste de mes certifications obtenues jusqu'à présent :</p>
-
-            <ul>
-                <li>
-                    <a href="PIX.pdf" target="_blank"
-                       class="certif-link"
-                       data-preview="pix-preview.jpg">
-                        Certification PIX
-                    </a>
-                </li>
-
-                <li>
-                    <a href="rgpd-module1.pdf" target="_blank"
-                       class="certif-link"
-                       data-preview="rgpd-module1-preview.jpg">
-                        Certification RGPD ET SES NOTIONS CLÉS 1
-                    </a>
-                </li>
-
-                <li>
-                    <a href="rgpd-module2.pdf" target="_blank"
-                       class="certif-link"
-                       data-preview="rgpd-module2-preview.jpg">
-                        Certification RGPD ET SES NOTIONS CLÉS 2
-                    </a>
-                </li>
-
-                <li>Certification 2 – à mettre plus tard</li>
-                <li>Certification 3 – à mettre plus tard</li>
-            </ul>
-
-            <p>
-                Ces certifications reflètent mes compétences et mon engagement
-                dans le domaine de l'informatique et de la gestion de projets.
-            </p>
-        </div>
-    </section>
+<a href="index.html">Accueil</a>
+<div class="dropdown"><span class="dropbtn">Présentation</span><div class="dropdown-content"><a href="apprenti.html">Apprenti</a><a href="entreprise.html">Entreprise</a><a href="colas.html">Mon service</a></div></div>
+<div class="dropdown"><span class="dropbtn">Épreuve E5</span><div class="dropdown-content"><a href="tableauSynthese.html">Tableau de synthèse</a><a href="missionFormation.html">Missions réalisées en formation</a><a href="missionEntreprise.html">Missions réalisées en entreprise</a><a href="certifications.html">Certifications</a></div></div>
+<div class="dropdown"><span class="dropbtn">Épreuve E6</span><div class="dropdown-content"><a href="situation.html">Situation</a><a href="production.html">Production</a></div></div>
+<a href="veille.html">Veille</a>
+</div></nav>
+<div class="container centered">
+<span class="section-overline">Épreuve E5</span>
+<h2 class="section-title">Certifications</h2>
+<div class="content-block centered">
+<p>Voici mes certifications obtenues :</p>
+<ul class="certif-list">
+<li><a href="PIX.pdf" target="_blank" class="certif-link" data-preview="pix-preview.jpg">Certification PIX</a></li>
+<li><a href="rgpd-module1.pdf" target="_blank" class="certif-link" data-preview="rgpd-module1-preview.jpg">Certification RGPD ET SES NOTIONS CLÉS 1</a></li>
+<li><a href="rgpd-module2.pdf" target="_blank" class="certif-link" data-preview="rgpd-module2-preview.jpg">Certification RGPD ET SES NOTIONS CLÉS 2</a></li>
+<li style="color:var(--text3)">Certification 2 – à mettre plus tard</li>
+<li style="color:var(--text3)">Certification 3 – à mettre plus tard</li>
+</ul>
+<p style="color:var(--text2)">Ces certifications reflètent mes compétences et mon engagement dans le domaine de l'informatique.</p>
 </div>
-
-<!-- PREVIEW -->
-<div class="certif-preview" id="certifPreview">
-    <img src="" alt="Aperçu certification">
 </div>
-
+<div class="certif-preview" id="certifPreview"><img src="" alt="Aperçu"></div>
+<footer><p>© 2026 Yohan DO CAO — Portfolio BTS SIO</p></footer>
 <script>
-    const preview = document.getElementById("certifPreview");
-    const previewImg = preview.querySelector("img");
-
-    document.querySelectorAll(".certif-link").forEach(link => {
-
-        link.addEventListener("mouseenter", () => {
-            previewImg.src = link.dataset.preview;
-            preview.classList.add("visible");
-        });
-
-        link.addEventListener("mousemove", e => {
-            preview.style.left = e.clientX + 18 + "px";
-            preview.style.top = e.clientY + 18 + "px";
-        });
-
-        link.addEventListener("mouseleave", () => {
-            preview.classList.remove("visible");
-            previewImg.src = "";
-        });
-
-    });
+const p=document.getElementById("certifPreview"),pi=p.querySelector("img");
+document.querySelectorAll(".certif-link").forEach(l=>{
+l.addEventListener("mouseenter",()=>{pi.src=l.dataset.preview;p.classList.add("visible")});
+l.addEventListener("mousemove",e=>{p.style.left=e.clientX+18+"px";p.style.top=e.clientY+18+"px"});
+l.addEventListener("mouseleave",()=>{p.classList.remove("visible");pi.src=""});
+});
 </script>
-
-</body>
-</html>
+</body></html>

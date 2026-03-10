@@ -1,247 +1,32 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Situation - Portfolio de Yohan DO CAO</title>
-    <style>
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css"><title>Situation - Portfolio de Yohan DO CAO</title></head><body>
+<nav><div class="nav-inner">
 
-        /* RESET */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f7fc;
-            color: #333;
-        }
-
-        header {
-            background-color: #0d6efd;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2.8rem;
-        }
-
-        /* NAVIGATION */
-        nav {
-            background-color: #333;
-            padding: 15px 0;
-            text-align: center;
-            position: relative;
-        }
-
-        nav a, nav .dropbtn {
-            color: white;
-            margin: 0 20px;
-            text-decoration: none;
-            font-weight: bold;
-            position: relative;
-            cursor: pointer;
-            display: inline-block;
-            padding: 12px 20px;
-            background-color: transparent;
-            border: none;
-        }
-
-        nav a:hover, .dropbtn:hover {
-            background-color: #0d6efd;
-            color: white;
-        }
-
-        .dropdown {
-            display: inline-block;
-            position: relative;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #333;
-            min-width: 200px;
-            top: 100%;
-            left: 0;
-            z-index: 10;
-            border-radius: 0 0 5px 5px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-
-        .dropdown-content a {
-            color: white;
-            padding: 12px 20px;
-            text-decoration: none;
-            display: block;
-            margin: 0;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #0d6efd;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* CONTENT */
-        .container {
-            padding: 40px;
-            display: flex;
-            justify-content: center;
-        }
-
-        section {
-            width: 100%;
-            max-width: 1000px;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            color: #0d6efd;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .content {
-            background-color: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            line-height: 1.7;
-        }
-
-        h3 {
-            margin-top: 35px;
-            color: #0d6efd;
-        }
-
-        ul {
-            margin: 15px 0 15px 25px;
-        }
-
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>Yohan DO CAO</h1>
-    <p>BTS SIO SISR – Apprenti Technicien Support</p>
-</header>
-
-<nav>
-    <a href="index.html">Accueil</a>
-
-    <div class="dropdown">
-        <a class="dropbtn">Présentation</a>
-        <div class="dropdown-content">
-            <a href="apprenti.html">Apprenti</a>
-            <a href="entreprise.html">Entreprise</a>
-            <a href="colas.html">Mon service</a>
-        </div>
-    </div>
-
-    <div class="dropdown">
-        <button class="dropbtn">Épreuve E5</button>
-        <div class="dropdown-content">
-            <a href="tableauSynthese.html">Tableau de synthèse</a>
-            <a href="missionFormation.html">Missions réalisées en formation</a>
-            <a href="missionEntreprise.html">Missions réalisées en entreprise</a>
-            <a href="certifications.html">Certifications</a>
-        </div>
-    </div>
-
-    <div class="dropdown">
-        <button class="dropbtn">Épreuve E6</button>
-        <div class="dropdown-content">
-            <a href="situation.html">Situation</a>
-            <a href="production.html">Production</a>
-        </div>
-    </div>
-
-    <a href="veille.html">Veille</a>
-</nav>
-
+<a href="index.html">Accueil</a>
+<div class="dropdown"><span class="dropbtn">Présentation</span><div class="dropdown-content"><a href="apprenti.html">Apprenti</a><a href="entreprise.html">Entreprise</a><a href="colas.html">Mon service</a></div></div>
+<div class="dropdown"><span class="dropbtn">Épreuve E5</span><div class="dropdown-content"><a href="tableauSynthese.html">Tableau de synthèse</a><a href="missionFormation.html">Missions réalisées en formation</a><a href="missionEntreprise.html">Missions réalisées en entreprise</a><a href="certifications.html">Certifications</a></div></div>
+<div class="dropdown"><span class="dropbtn">Épreuve E6</span><div class="dropdown-content"><a href="situation.html">Situation</a><a href="production.html">Production</a></div></div>
+<a href="veille.html">Veille</a>
+</div></nav>
 <div class="container">
-<section>
+<span class="section-overline">Épreuve E6</span>
 <h2 class="section-title">Situation Professionnelle – Projet BELLETABLE</h2>
-
-<div class="content">
-
+<div class="content-block">
 <h3>1. Contexte</h3>
-<p>
-Dans le cadre de ma formation en BTS SIO option SISR, j’ai réalisé le projet BELLETABLE.
-L’objectif était de concevoir et déployer une solution complète de gestion de parc informatique
-permettant le suivi du matériel, des utilisateurs, des tickets d’incidents et des consommables.
-</p>
-
-<p>
-Le projet a été réalisé dans un environnement virtualisé via Proxmox.
-Une machine virtuelle Debian 12 a été déployée afin d’héberger GLPI,
-outil open-source de gestion de parc informatique.
-</p>
-
-<p>Cette situation a été réalisé avec <a href="https://dnsgdt.github.io/PortfolioDanis/" target="_blank" rel="noopener noreferrer">Danis GOUEDART</a>.</p>
-
-<h3>2. Architecture technique mise en place</h3>
-<ul>
-<li>Hyperviseur : Proxmox VE</li>
-<li>Système serveur : Debian 12</li>
-<li>Serveur Web : Apache2</li>
-<li>Base de données : MariaDB</li>
-<li>Langage supporté : PHP</li>
-<li>Application : GLPI</li>
-<li>Authentification : LDAP</li>
-</ul>
-
+<p>Dans le cadre de ma formation en BTS SIO option SISR, j'ai réalisé le projet BELLETABLE. L'objectif était de concevoir et déployer une solution complète de gestion de parc informatique.</p>
+<p>Le projet a été réalisé dans un environnement virtualisé via Proxmox. Une VM Debian 12 a été déployée pour héberger GLPI.</p>
+<p>Cette situation a été réalisée avec <a href="https://dnsgdt.github.io/PortfolioDanis/" target="_blank">Danis GOUEDART</a>.</p>
+<h3>2. Architecture technique</h3>
+<ul><li>Hyperviseur : Proxmox VE</li><li>Système : Debian 12</li><li>Serveur Web : Apache2</li><li>BDD : MariaDB</li><li>Langage : PHP</li><li>Application : GLPI</li><li>Auth : LDAP</li></ul>
 <h3>3. Installation et configuration</h3>
-<ul>
-<li>Installation Apache : apt install apache2</li>
-<li>Installation MariaDB : apt install mariadb-server</li>
-<li>Installation PHP et modules requis</li>
-<li>Création base de données sécurisée</li>
-<li>Configuration droits SQL</li>
-<li>Déploiement GLPI dans /var/www/html</li>
-</ul>
-
+<ul><li>Installation Apache, MariaDB, PHP</li><li>Création BDD sécurisée + droits SQL</li><li>Déploiement GLPI dans /var/www/html</li></ul>
 <h3>4. Configuration LDAP</h3>
-<p>
-Mise en place de l’authentification centralisée via LDAP.
-Un problème de bind a été identifié puis corrigé après analyse
-des paramètres DN et identifiants.
-</p>
-
+<p>Authentification centralisée via LDAP. Correction d'un problème de bind après analyse des paramètres DN.</p>
 <h3>5. Gestion des profils</h3>
-<ul>
-<li>Administrateur</li>
-<li>Technicien</li>
-<li>Utilisateur</li>
-<li>Observateur</li>
-</ul>
-
+<ul><li>Administrateur</li><li>Technicien</li><li>Utilisateur</li><li>Observateur</li></ul>
 <h3>6. Résultats</h3>
-<ul>
-<li>GLPI opérationnel</li>
-<li>LDAP fonctionnel</li>
-<li>Système de tickets validé</li>
-<li>Gestion complète du parc</li>
-</ul>
-
+<ul><li>GLPI opérationnel</li><li>LDAP fonctionnel</li><li>Système de tickets validé</li><li>Gestion complète du parc</li></ul>
 <h3>7. Analyse personnelle</h3>
-<p>
-Ce projet m’a permis de consolider mes compétences en administration système,
-virtualisation et gestion d’infrastructure.
-</p>
-
+<p>Ce projet m'a permis de consolider mes compétences en administration système, virtualisation et gestion d'infrastructure.</p>
 </div>
-</section>
 </div>
-
-</body>
-</html>
+<footer><p>© 2026 Yohan DO CAO — Portfolio BTS SIO</p></footer></body></html>

@@ -1,477 +1,131 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Veille - Portfolio de Yohan DO CAO</title>
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css"><title>Veille - Portfolio de Yohan DO CAO</title></head><body>
+<nav><div class="nav-inner">
 
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+<a href="index.html">Accueil</a>
+<div class="dropdown"><span class="dropbtn">Présentation</span><div class="dropdown-content"><a href="apprenti.html">Apprenti</a><a href="entreprise.html">Entreprise</a><a href="colas.html">Mon service</a></div></div>
+<div class="dropdown"><span class="dropbtn">Épreuve E5</span><div class="dropdown-content"><a href="tableauSynthese.html">Tableau de synthèse</a><a href="missionFormation.html">Missions réalisées en formation</a><a href="missionEntreprise.html">Missions réalisées en entreprise</a><a href="certifications.html">Certifications</a></div></div>
+<div class="dropdown"><span class="dropbtn">Épreuve E6</span><div class="dropdown-content"><a href="situation.html">Situation</a><a href="production.html">Production</a></div></div>
+<a href="veille.html">Veille</a>
+</div></nav>
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f7fc;
-            color: #333;
-        }
-
-        header {
-            background-color: #0d6efd;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        nav {
-            background-color: #333;
-            padding: 15px 0;
-            text-align: center;
-        }
-
-        nav a, .dropbtn {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .dropdown {
-            display: inline-block;
-            position: relative;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #333;
-            min-width: 220px;
-            top: 100%;
-            left: 0;
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            color: white;
-            padding: 12px 20px;
-            display: block;
-            text-decoration: none;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .container {
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        section {
-            width: 100%;
-            margin-bottom: 60px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            color: #0d6efd;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .content {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            max-width: 900px;
-            width: 100%;
-            line-height: 1.8;
-        }
-
-        .content img {
-            display: block;
-            max-width: 420px;
-            width: 100%;
-            margin: 25px auto;
-            border-radius: 10px;
-        }
-
-        ul {
-            margin-left: 25px;
-            margin-top: 15px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        table, th, td {
-            border: 1px solid #ccc;
-        }
-
-        th {
-            background-color: #0d6efd;
-            color: white;
-            padding: 10px;
-        }
-
-        td {
-            padding: 10px;
-            vertical-align: top;
-        }
-
-        /* ===== QUICK NAV RÉTRACTABLE ===== */
-
-        .quick-nav {
-            position: fixed;
-            top: 50%;
-            right: 20px;
-            transform: translateY(-50%);
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            padding: 10px;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            width: 160px;
-            transition: width 0.3s ease;
-            overflow: hidden;
-        }
-
-        .quick-links {
-            display: flex;
-            flex-direction: column;
-            margin-left: 10px;
-            white-space: nowrap;
-            transition: opacity 0.2s ease;
-        }
-
-        .quick-links a {
-            position: relative;              /* AJOUT */
-            padding-left: 14px;              /* AJOUT */
-            text-decoration: none;
-            color: #0d6efd;
-            font-weight: bold;
-            margin: 8px 0;
-            font-size: 0.9rem;
-        }
-
-        /* ===== MICRO-POINT ===== */
-        .dot {
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 4px;
-            height: 4px;
-            background-color: #0d6efd;
-            border-radius: 50%;
-            opacity: 0;
-            transition: opacity 0.2s ease;
-        }
-
-        .quick-links a.active .dot {
-            opacity: 1;
-        }
-        /* ===== FIN AJOUT ===== */
-
-        .toggle-btn {
-            background: none;
-            border: none;
-            font-size: 0.9rem;
-            cursor: pointer;
-            color: #888;
-            transition: transform 0.3s ease;
-            padding: 5px;
-        }
-
-        .quick-nav.collapsed {
-            width: 36px;
-        }
-
-        .quick-nav.collapsed .quick-links {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .quick-nav.collapsed .toggle-btn {
-            transform: rotate(180deg);
-        }
-
-        @media (max-width: 1100px) {
-            .quick-nav { display: none; }
-        }
-    </style>
-</head>
-
-<body>
-
-<header>
-    <h1>Yohan DO CAO</h1>
-    <p>BTS SIO SISR – Apprenti Technicien Support</p>
-</header>
-
-<nav>
-    <a href="index.html">Accueil</a>
-
-    <div class="dropdown">
-        <a class="dropbtn">Présentation</a>
-        <div class="dropdown-content">
-            <a href="apprenti.html">Apprenti</a>
-            <a href="entreprise.html">Entreprise</a>
-            <a href="colas.html">Mon service</a>
-        </div>
-    </div>
-
-    <div class="dropdown">
-        <button class="dropbtn">Épreuve E5</button>
-        <div class="dropdown-content">
-            <a href="tableauSynthese.html">Tableau de synthèse</a>
-            <a href="missionFormation.html">Missions réalisées en formation</a>
-            <a href="missionEntreprise.html">Missions réalisées en entreprise</a>
-            <a href="certifications.html">Certifications</a>
-        </div>
-    </div>
-
-    <div class="dropdown">
-        <button class="dropbtn">Épreuve E6</button>
-        <div class="dropdown-content">
-            <a href="situation.html">Situation</a>
-            <a href="production.html">Production</a>
-        </div>
-    </div>
-
-    <a href="veille.html">Veille</a>
-</nav>
-
-<!-- QUICK NAV -->
 <div class="quick-nav" id="quickNav">
-    <button class="toggle-btn" id="toggleBtn">&#9654;</button>
-    <div class="quick-links">
-        <a href="#intro" data-section="intro"><span class="dot"></span>Intro</a>
-        <a href="#si" data-section="si"><span class="dot"></span>SI</a>
-        <a href="#cyber" data-section="cyber"><span class="dot"></span>Cyber</a>
-        <a href="#donnees" data-section="donnees"><span class="dot"></span>Données</a>
-        <a href="#reglementation" data-section="reglementation"><span class="dot"></span>AI Act</a>
-        <a href="#tableau" data-section="tableau"><span class="dot"></span>Tableau</a>
-    </div>
+<button class="toggle-btn" id="toggleBtn">&#9654;</button>
+<div class="quick-links">
+<a href="#intro" data-section="intro"><span class="dot"></span>Intro</a>
+<a href="#si" data-section="si"><span class="dot"></span>SI</a>
+<a href="#cyber" data-section="cyber"><span class="dot"></span>Cyber</a>
+<a href="#donnees" data-section="donnees"><span class="dot"></span>Données</a>
+<a href="#reglementation" data-section="reglementation"><span class="dot"></span>AI Act</a>
+<a href="#tableau" data-section="tableau"><span class="dot"></span>Tableau</a>
+<a href="#outils" data-section="outils"><span class="dot"></span>Outils</a>
+</div>
 </div>
 
 <div class="container">
 
 <section id="intro">
-    <h2 class="section-title">Veille Technologique : Intelligence Artificielle</h2>
-    <div class="content">
-        <p>
-            Dans le cadre de mon BTS SIO option SISR, cette veille technologique porte sur
-            l’intelligence artificielle et son évolution rapide. L’IA est aujourd’hui
-            un élément central de la transformation numérique des entreprises.
-        </p>
-        <p>
-            Elle est utilisée aussi bien pour automatiser des tâches que pour analyser
-            des données complexes, améliorer la sécurité et optimiser les systèmes
-            d’information.
-        </p>
-        <img src="images/ia.jpg" alt="Illustration de l'intelligence artificielle">
-    </div>
+<h2 class="section-title">Veille Technologique : Intelligence Artificielle</h2>
+<div class="content-block">
+<p>Dans le cadre de mon BTS SIO option SISR, cette veille porte sur l'intelligence artificielle et son évolution rapide. L'IA est aujourd'hui un élément central de la transformation numérique des entreprises.</p>
+<p>Elle est utilisée aussi bien pour automatiser des tâches que pour analyser des données complexes, améliorer la sécurité et optimiser les systèmes d'information.</p>
+<img src="images/ia.jpg" alt="Intelligence artificielle">
+</div>
 </section>
 
 <section id="si">
-    <h2 class="section-title">IA et Systèmes d’Information</h2>
-    <div class="content">
-        <p>
-            L’intelligence artificielle est intégrée aux systèmes d’information afin
-            d’automatiser la supervision, la maintenance et l’optimisation des
-            infrastructures informatiques.
-        </p>
-        <p>
-            Elle permet notamment l’analyse des performances des serveurs, la détection
-            d’anomalies réseau et l’anticipation des pannes, ce qui améliore la
-            disponibilité des services.
-        </p>
-        <p>
-            Pour un technicien SISR, ces outils représentent un gain de temps important,
-            mais nécessitent une surveillance humaine afin de conserver le contrôle
-            sur les décisions critiques.
-        </p>
-        <img src="images/datacenter.jpg" alt="Infrastructure informatique">
-    </div>
+<h2 class="section-title">IA et Systèmes d'Information</h2>
+<div class="content-block">
+<p>L'IA est intégrée aux SI pour automatiser la supervision, la maintenance et l'optimisation des infrastructures informatiques.</p>
+<p>Analyse des performances serveurs, détection d'anomalies réseau, anticipation des pannes — amélioration de la disponibilité des services.</p>
+<p>Pour un technicien SISR, ces outils représentent un gain de temps important, mais nécessitent une surveillance humaine.</p>
+<img src="images/datacenter.jpg" alt="Infrastructure informatique">
+</div>
 </section>
 
 <section id="cyber">
-    <h2 class="section-title">IA et Cybersécurité</h2>
-    <div class="content">
-        <p>
-            En cybersécurité, l’IA joue un rôle clé dans la détection des menaces et
-            l’analyse des comportements suspects sur les réseaux.
-        </p>
-        <p>
-            Elle est utilisée dans les systèmes IDS/IPS, les SIEM et les solutions de
-            surveillance afin d’identifier rapidement les attaques et de limiter
-            leur impact.
-        </p>
-        <p>
-            Toutefois, les cybercriminels utilisent également l’IA pour automatiser
-            leurs attaques, ce qui oblige les entreprises à renforcer continuellement
-            leurs défenses.
-        </p>
-        <img src="images/cybersecurity.png" alt="Cybersécurité et intelligence artificielle">
-    </div>
+<h2 class="section-title">IA et Cybersécurité</h2>
+<div class="content-block">
+<p>En cybersécurité, l'IA joue un rôle clé dans la détection des menaces et l'analyse des comportements suspects.</p>
+<p>Elle est utilisée dans les IDS/IPS, SIEM et solutions de surveillance pour identifier rapidement les attaques.</p>
+<p>Les cybercriminels utilisent également l'IA pour automatiser leurs attaques, obligeant les entreprises à renforcer leurs défenses.</p>
+<img src="images/cybersecurity.png" alt="Cybersécurité et IA">
+</div>
 </section>
 
 <section id="donnees">
-    <h2 class="section-title">IA et Données Personnelles</h2>
-    <div class="content">
-        <p>
-            Les systèmes d’intelligence artificielle reposent sur l’exploitation de
-            grandes quantités de données, souvent personnelles ou sensibles.
-        </p>
-        <p>
-            Les entreprises doivent donc respecter le RGPD, notamment en matière de
-            sécurité des données, de limitation des accès et de transparence des
-            traitements automatisés.
-        </p>
-        <p>
-            Le technicien SISR joue un rôle essentiel dans la protection des bases de
-            données, la mise en place de sauvegardes et la gestion des droits d’accès.
-        </p>
-        <img src="images/rgpd.png" alt="Protection des données personnelles">
-    </div>
+<h2 class="section-title">IA et Données Personnelles</h2>
+<div class="content-block">
+<p>Les systèmes d'IA reposent sur l'exploitation de grandes quantités de données, souvent personnelles ou sensibles.</p>
+<p>Les entreprises doivent respecter le RGPD : sécurité des données, limitation des accès, transparence des traitements.</p>
+<p>Le technicien SISR joue un rôle essentiel dans la protection des BDD, les sauvegardes et la gestion des droits d'accès.</p>
+<img src="images/rgpd.png" alt="RGPD">
+</div>
 </section>
 
 <section id="reglementation">
-    <h2 class="section-title">Réglementation et AI Act</h2>
-    <div class="content">
-        <p>
-            L’AI Act est un règlement européen visant à encadrer l’utilisation de
-            l’intelligence artificielle selon le niveau de risque des systèmes utilisés.
-        </p>
-        <p>
-            Il classe les systèmes d’IA en plusieurs catégories allant des usages
-            interdits aux usages libres, en imposant des obligations strictes pour
-            les systèmes à haut risque.
-        </p>
-        <p>
-            Pour les entreprises, cela implique une analyse des risques, une
-            documentation technique et une responsabilité accrue en cas de
-            dysfonctionnement.
-        </p>
-        <img src="images/eu.png" alt="Union européenne et réglementation de l'IA">
-    </div>
+<h2 class="section-title">Réglementation et AI Act</h2>
+<div class="content-block">
+<p>L'AI Act est un règlement européen encadrant l'utilisation de l'IA selon le niveau de risque des systèmes.</p>
+<p>Il classe les systèmes d'IA en catégories allant des usages interdits aux usages libres, avec des obligations strictes pour les systèmes à haut risque.</p>
+<p>Pour les entreprises : analyse des risques, documentation technique et responsabilité accrue.</p>
+<img src="images/eu.png" alt="Union européenne">
+</div>
 </section>
 
 <section id="tableau">
-    <h2 class="section-title">Tableau de Veille Technologique</h2>
-    <div class="content">
-        <table>
-            <tr>
-                <th>Date</th>
-                <th>Source</th>
-                <th>Sujet</th>
-                <th>Résumé</th>
-                <th>Enjeux / Impacts pour l'entreprise</th>
-                <th>Impact pour le métier SISR</th>
-            </tr>
-            <tr>
-                <td>Janvier 2025</td>
-                <td>Coexya</td>
-                <td>AI Act</td>
-                <td>Encadrement légal de l’IA en Europe.</td>
-                <td>Conformité obligatoire.</td>
-                <td>Sécurité et conformité des solutions.</td>
-            </tr>
-            <tr>
-                <td>Février 2025</td>
-                <td>CNIL</td>
-                <td>Données personnelles</td>
-                <td>Respect strict du RGPD.</td>
-                <td>Risques juridiques.</td>
-                <td>Sécurisation des données.</td>
-            </tr>
-            <tr>
-                <td>Mars 2025</td>
-                <td>ANSSI</td>
-                <td>Cyberattaques</td>
-                <td>Automatisation des attaques.</td>
-                <td>Renforcement de la sécurité.</td>
-                <td>Surveillance et gestion d’incidents.</td>
-            </tr>
-            <tr>
-                <td>Avril 2025</td>
-                <td>Le Monde Informatique</td>
-                <td>Automatisation</td>
-                <td>Déploiement d’outils IA.</td>
-                <td>Dépendance accrue.</td>
-                <td>Supervision humaine.</td>
-            </tr>
-            <tr>
-                <td>Mai 2025</td>
-                <td>Google Alerts</td>
-                <td>IA générative</td>
-                <td>Création automatique de contenu.</td>
-                <td>Fuite de données.</td>
-                <td>Contrôle des accès.</td>
-            </tr>
-            <tr>
-                <td>Juin 2025</td>
-                <td>ANSSI</td>
-                <td>Supervision intelligente</td>
-                <td>Analyse prédictive.</td>
-                <td>Haute disponibilité.</td>
-                <td>Analyse humaine des alertes.</td>
-            </tr>
-        </table>
-    </div>
+<h2 class="section-title">Tableau de Veille Technologique</h2>
+<div class="content-block" style="overflow-x:auto">
+<table class="veille-table">
+<tr><th>Date</th><th>Source</th><th>Sujet</th><th>Résumé</th><th>Enjeux / Impacts</th><th>Impact SISR</th></tr>
+<tr><td>Janvier 2025</td><td>Coexya</td><td>AI Act</td><td>Encadrement légal de l'IA en Europe.</td><td>Conformité obligatoire.</td><td>Sécurité et conformité.</td></tr>
+<tr><td>Février 2025</td><td>CNIL</td><td>Données personnelles</td><td>Respect strict du RGPD.</td><td>Risques juridiques.</td><td>Sécurisation des données.</td></tr>
+<tr><td>Mars 2025</td><td>ANSSI</td><td>Cyberattaques</td><td>Automatisation des attaques.</td><td>Renforcement sécurité.</td><td>Surveillance et incidents.</td></tr>
+<tr><td>Avril 2025</td><td>Le Monde Informatique</td><td>Automatisation</td><td>Déploiement d'outils IA.</td><td>Dépendance accrue.</td><td>Supervision humaine.</td></tr>
+<tr><td>Mai 2025</td><td>Google Alerts</td><td>IA générative</td><td>Création automatique de contenu.</td><td>Fuite de données.</td><td>Contrôle des accès.</td></tr>
+<tr><td>Juin 2025</td><td>ANSSI</td><td>Supervision intelligente</td><td>Analyse prédictive.</td><td>Haute disponibilité.</td><td>Analyse humaine des alertes.</td></tr>
+</table>
+</div>
+</section>
+
+<section id="outils">
+<h2 class="section-title">Outils de veille utilisés</h2>
+<div class="content-block">
+<p>Pour mener à bien cette veille technologique, j'utilise plusieurs outils et sources d'information complémentaires qui me permettent de rester informé en continu des évolutions du secteur.</p>
+
+<h3>Agrégateurs &amp; alertes</h3>
+<p><a href="https://feedly.com" target="_blank"><strong>Feedly</strong></a> — Agrégateur de flux RSS que j'utilise pour centraliser les articles de mes sources favorites (ANSSI, Le Monde Informatique, ZDNet, IT-Connect) dans un seul tableau de bord. Permet de classer par catégorie et de ne rien manquer.</p>
+<p><a href="https://www.google.fr/alerts" target="_blank"><strong>Google Alerts</strong></a> — Alertes configurées sur des mots-clés spécifiques : « intelligence artificielle cybersécurité », « AI Act Europe », « RGPD données IA », « vulnérabilités réseau ». Je reçois un récapitulatif quotidien par mail avec les nouveaux articles correspondants.</p>
+
+<h3>Réseaux sociaux professionnels</h3>
+<p><a href="https://www.linkedin.com" target="_blank"><strong>LinkedIn</strong></a> — Suivi de pages et profils spécialisés en cybersécurité, administration système et infrastructures IT. Permet de repérer les tendances et les retours d'expérience de professionnels du secteur.</p>
+<p><a href="https://x.com" target="_blank"><strong>Twitter / X</strong></a> — Suivi de comptes techniques (ANSSI, CERT-FR, chercheurs en sécurité) pour les alertes en temps réel sur les vulnérabilités et les incidents de sécurité.</p>
+
+<h3>Forums &amp; communautés</h3>
+<p><a href="https://www.reddit.com/r/sysadmin/" target="_blank"><strong>Reddit</strong></a> — Suivi des communautés <a href="https://www.reddit.com/r/sysadmin/" target="_blank">r/sysadmin</a>, <a href="https://www.reddit.com/r/networking/" target="_blank">r/networking</a> et <a href="https://www.reddit.com/r/cybersecurity/" target="_blank">r/cybersecurity</a> pour les discussions techniques, retours d'expérience terrain et veille sur les bonnes pratiques.</p>
+
+<h3>Vidéo &amp; formation</h3>
+<p><a href="https://www.youtube.com" target="_blank"><strong>YouTube</strong></a> — Chaînes techniques spécialisées en administration système, réseau et cybersécurité pour des tutoriels, démonstrations et analyses de cas concrets.</p>
+
+<h3>Sources institutionnelles</h3>
+<p><a href="https://www.ssi.gouv.fr" target="_blank"><strong>ANSSI</strong></a> (Agence Nationale de la Sécurité des Systèmes d'Information) — Bulletins d'alerte, recommandations de sécurité et guides de bonnes pratiques.</p>
+<p><a href="https://www.cnil.fr" target="_blank"><strong>CNIL</strong></a> — Suivi des évolutions réglementaires liées au RGPD et à la protection des données personnelles dans le contexte de l'IA.</p>
+<p><a href="https://www.cert.ssi.gouv.fr" target="_blank"><strong>CERT-FR</strong></a> — Alertes de sécurité, avis de vulnérabilités et recommandations techniques en temps réel.</p>
+
+<h3>Presse &amp; cabinets spécialisés</h3>
+<p><a href="https://www.lemondeinformatique.fr" target="_blank"><strong>Le Monde Informatique</strong></a> — Articles de fond, analyses et actualités sur les infrastructures, le cloud, la cybersécurité et la transformation numérique.</p>
+<p><a href="https://www.zdnet.fr" target="_blank"><strong>ZDNet</strong></a> — Actualités tech, analyses de marché et retours d'expérience sur les solutions IT.</p>
+<p><a href="https://www.it-connect.fr" target="_blank"><strong>IT-Connect</strong></a> — Tutoriels, guides et actualités orientés administration système, réseau et sécurité.</p>
+<p><a href="https://www.coexya.eu" target="_blank"><strong>Coexya</strong></a> — Cabinet spécialisé dans la transformation numérique et la conformité réglementaire, source utilisée pour le suivi de l'AI Act et des réglementations européennes sur l'IA.</p>
+</div>
 </section>
 
 </div>
 
+<footer><p>© 2026 Yohan DO CAO — Portfolio BTS SIO</p></footer>
 <script>
-    const toggleBtn = document.getElementById('toggleBtn');
-    const quickNav = document.getElementById('quickNav');
-
-    toggleBtn.addEventListener('click', () => {
-        quickNav.classList.toggle('collapsed');
-    });
-
-    /* ===== SCROLL-SPY MICRO-POINT ===== */
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".quick-links a");
-
-    function updateActiveSection() {
-        let current = "";
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 200;
-            if (window.scrollY >= sectionTop) {
-                current = section.id;
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove("active");
-            if (link.dataset.section === current) {
-                link.classList.add("active");
-            }
-        });
-    }
-
-    window.addEventListener("scroll", updateActiveSection);
-    updateActiveSection();
-    /* ===== FIN AJOUT ===== */
+document.getElementById("toggleBtn").addEventListener("click",function(){document.getElementById("quickNav").classList.toggle("collapsed")});
+var sections=document.querySelectorAll("section"),navLinks=document.querySelectorAll(".quick-links a");
+function updateActive(){var c="";sections.forEach(function(s){if(window.scrollY>=s.offsetTop-200)c=s.id});navLinks.forEach(function(l){l.classList.toggle("active",l.dataset.section===c)})}
+window.addEventListener("scroll",updateActive);updateActive();
 </script>
-
-</body>
-</html>
+</body></html>
